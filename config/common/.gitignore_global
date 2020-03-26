@@ -1,0 +1,12 @@
+*~
+.DS_Store
+ensime.sbt
+.#*
+*.temp
+.sbt-hydra-history
+.idea/
+*.iml
+GPATH
+GRTAGS
+GTAGS
+

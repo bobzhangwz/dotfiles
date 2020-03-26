@@ -1,0 +1,81 @@
+---
+
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: install base packages
+      homebrew:
+        package:
+        - ack
+        - ag
+        - coreutils
+        - dos2unix
+        - jq
+        - tmux
+        - tree
+        - ttyrec
+        - watch
+        - wget
+        - fish
+        - zsh
+        - hub
+        - node
+        - ispell
+        - fzf
+        - z
+
+    - name: install cask
+      homebrew_cask:
+        package:
+        - iterm2
+        - alfred
+        - firefox
+        - emacs
+        - macvim
+        - the-unarchiver
+        - wechat
+        - shadowsocksx-ng
+        - amethyst
+        - cheatsheet
+        - proxifier
+        - atom
+        - sogouinput
+        - visual-studio-code
+        - intellij-idea
+
+    - name: Download spf13
+      get_url:
+        url: https://j.mp/spf13-vim3
+        dest: /tmp/spf13
+        mode: +x
+
+    - name: install
+      shell: sh /tmp/spf13
+
+    - name: install spacemacs
+      git:
+        repo: https://github.com/syl20bnr/spacemacs
+        dest: ~/.emacs.d
+
+    - name: clone powerline fonts
+      git:
+        repo: https://github.com/powerline/fonts.git
+        depth: 1
+        dest: /tmp/fonts
+
+    - name: install powerline fonts
+      shell: bash /tmp/fonts/install.sh
+
+    - name: install additional cask
+      homebrew_cask:
+        package:
+        - java
+        - google-chrome
+        - slack
+        - xquartz
+        - vlc
+    - name: install tpm
+      git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: ~/.tmux/plugins/tpm
+

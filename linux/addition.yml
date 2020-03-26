@@ -1,0 +1,14 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    # cat vs_code_extensions_list.txt | xargs -n 1 code --install-extension
+    - name: install additional packages
+      aur:
+        use: yay
+        name:
+          - sbt
+          - scala
+          - node
+          - yarn
+          - intellij-idea-ultimate-edition
+          - jdk8-openjdk

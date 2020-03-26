@@ -1,0 +1,26 @@
+{
+    "files.associations": {
+        "*.wpy": "vue"
+    },
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "editor.fontFamily": "'monofur For Powerline', ' WenQuanYi Micro Hei Light', ' UbuntuMonoDerivativePowerline Nerd Font', 'Droid Sans Fallback'",
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "all",
+    "terminal.external.linuxExec": "urxvtc",
+    "window.zoomLevel": 1.1,
+    "editor.minimap.enabled": false,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.fontSize": 16,
+    "markdown.preview.fontSize": 15,
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "liveshare.anonymousGuestApproval": "reject",
+    "liveshare.autoShareServers": false,
+    "liveshare.autoShareTerminals": false,
+    "liveshare.codeLens": false,
+    "liveshare.connectionMode": "direct",
+    "liveshare.guestApprovalRequired": true,
+    "liveshare.shareExternalFiles": false,
+    "workbench.iconTheme": "material-icon-theme"
+}

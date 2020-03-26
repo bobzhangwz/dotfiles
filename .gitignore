@@ -1,0 +1,7 @@
+*.retry
+config/linux/.xmonad/prompt-history
+config/linux/.xmonad/xmonad-x86_64-linux
+config/linux/.xmonad/xmonad.errors
+config/linux/.xmonad/xmonad.hi
+config/linux/.xmonad/xmonad.o
+.spacemacs.env
