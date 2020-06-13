@@ -112,7 +112,7 @@ export PATH="/usr/lib/jvm/java-8-jdk/bin:$PATH"
 [[ -r ~/usr/aws-shortcuts/aws-shortcuts.sh ]] && source ~/usr/aws-shortcuts/aws-shortcuts.sh
 if [[ -d /opt/asdf-vm ]]; then
   . /opt/asdf-vm/asdf.sh
-  . /opt/asdf-vm/completions/asdf.bash
+  # . /opt/asdf-vm/completions/asdf.bash
 fi
 
 alias ls="ls -F --color=auto"

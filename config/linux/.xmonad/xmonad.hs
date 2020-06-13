@@ -69,7 +69,7 @@ xftFont = "xft:monofur for Powerline:size=14"
 --myTerminal = "xfce4-terminal"
 myTerminal = "urxvtc"
 
-withProxy command = "http_proxy=\"http://127.0.0.1:12333\" https_proxy=\"http://127.0.0.1:12333\" " ++ command
+withProxy command = "http_proxy=\"http://127.0.0.1:8888\" https_proxy=\"http://127.0.0.1:8888\" " ++ command
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -438,7 +438,7 @@ myManageHook = composeAll $ concat [
         ("mail", "mail.google.com")
       ]
     myCenterFloats = ["Sysinfo", "XMessage", "Smplayer"
-                      ,"MPlayer", "nemo"
+                      ,"MPlayer", "nemo", "Thunar"
                       , "Toplevel", "Pcmanfm", "goldendict"
                       , "Xmessage","XFontSel","Downloads"
                       ,"Nm-connection-editor", "Pidgin"
