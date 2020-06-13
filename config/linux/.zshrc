@@ -105,6 +105,7 @@ export OKTA_USERNAME='bo.zhang'
 export TERM=rxvt-256color
 export PATH="$PATH:$HOME/usr/rea-slip-utils/bin:$HOME/.local/bin:$HOME/.yarn/bin"
 
+export PATH="/usr/lib/jvm/java-8-jdk/bin:$PATH"
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 [[ -r /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
 [[ -r /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
@@ -124,4 +125,8 @@ alias grep='grep --color=auto'
 
 if [ -z "$DISPLAY" ] && [ "$(fgconsole)" -eq 1 ]; then
     exec ssh-agent startx
+fi
+
+if [ $commands[qshell] ]; then
+    source <(qshell completion zsh)
 fi
