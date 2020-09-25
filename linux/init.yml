@@ -1,0 +1,78 @@
+---
+
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: install base packages
+      aur:
+        use: yay
+        name:
+          - ack
+          - aspell-en
+          - emacs
+          - fzf
+          - fd
+          - htop
+          - neovim
+          - pcmanfm
+          - powerline-fonts
+          - proxychains-ng
+          - rxvt-unicode
+          - tmux
+          - surf
+          - trayer
+          - xmobar
+          - xmonad
+          - xmonad-contrib
+          - google-chrome
+          - z
+          - picom
+          - fcitx
+          - fcitx-configtool
+          - fcitx-googlepinyin
+          - fcitx-gtk2
+          - fcitx-gtk3
+          - fcitx-qt4
+          - fcitx-qt5
+          - synapse
+          - jq
+          - asdf-vm
+          - the_silver_searcher
+          - urxvt-resize-font-git
+          - xclip
+          - wqy-microhei
+          - wqy-microhei-lite
+          - nerd-fonts-dejavu-complete
+          - global
+          - deepin-screenshot
+          - v2ray
+          - qv2ray
+
+    - name: clone powerline fonts
+      git:
+        repo: https://github.com/powerline/fonts.git
+        depth: 1
+        dest: /tmp/fonts
+
+    - name: install powerline fonts
+      shell: bash /tmp/fonts/install.sh
+
+    - name: install tpm
+      git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: ~/.tmux/plugins/tpm
+
+    - name: install spacemacs
+      git:
+        repo: https://github.com/syl20bnr/spacemacs
+        dest: ~/.emacs.d
+        depth: 1
+
+    - name: Download spacevim
+      get_url:
+        url: https://spacevim.org/install.sh
+        dest: /tmp/install_spacevim.sh
+        mode: +x
+
+    - name: install spacevim
+      shell: sh /tmp/install_spacevim.sh

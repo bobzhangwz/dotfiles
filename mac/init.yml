@@ -1,0 +1,69 @@
+---
+
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: install base packages
+      homebrew:
+        package:
+        - ack
+        - ag
+        - fd
+        - coreutils
+        - dos2unix
+        - jq
+        - tmux
+        - tree
+        - ttyrec
+        - watch
+        - wget
+        - zsh
+        - ispell
+        - fzf
+        - z
+        - asdf
+        - neovim
+
+    - name: install cask
+      homebrew_cask:
+        package:
+        - iterm2
+        - alfred
+        - firefox
+        - emacs
+        - the-unarchiver
+        - wechat
+        - amethyst
+
+    - name: install spacemacs
+      git:
+        repo: https://github.com/syl20bnr/spacemacs
+        dest: ~/.emacs.d
+
+    - name: Download spacevim
+      get_url:
+        url: https://spacevim.org/install.sh
+        dest: /tmp/install_spacevim.sh
+        mode: +x
+
+    - name: install spacevim
+      shell: sh /tmp/install_spacevim.sh
+
+    - name: clone powerline fonts
+      git:
+        repo: https://github.com/powerline/fonts.git
+        depth: 1
+        dest: /tmp/fonts
+
+    - name: install powerline fonts
+      shell: bash /tmp/fonts/install.sh
+
+    - name: install additional cask
+      homebrew_cask:
+        package:
+        - vlc
+    - name: install tpm
+      git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: ~/.tmux/plugins/tpm
+

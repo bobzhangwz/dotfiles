@@ -1,0 +1,29 @@
+---
+
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: install base packages
+      homebrew:
+        package:
+        - ranger
+        - highlight
+
+    - name: install cask
+      homebrew_cask:
+        package: 
+        - youdaodict
+        - google-backup-and-sync
+        - spark
+        - xmind
+        - beyond-compare
+        - filezilla
+
+    - name: install packages for fun
+      homebrew:
+        package:
+        - cmatrix
+        - sl
+        - fortune
+        - cowsay
+        - lolcat

@@ -1,0 +1,41 @@
+[user]
+	name = bozhang
+	email = 
+[push]
+	default = simple
+[color]
+	ui = always
+	diff = off
+[color "status"]
+	added     = green
+	changed   = red
+	untracked = magenta
+[color "diff"]
+	meta = yellow bold
+	frag = magenta
+	old  = red
+	new  = green
+[color "branch"]
+	current = green
+	local   = yellow
+	remote  = cyan
+[alias]
+	s   = status
+	ss  = status -s -b
+	df  = diff
+	p   = pull --rebase
+	dfn = diff --name-only
+	c   = commit -m
+	ca  = commit -am
+	aa  = add .
+	b   = branch
+	l   = log --oneline --decorate --color
+	ls  = log --oneline --graph --decorate --color
+	ll  = log --graph --decorate --color
+	w   = show --color
+[receive]
+	denyCurrentBranch = ignore
+[core]
+	excludesfile = ~/.gitignore_global
+[github]
+	user = bobzhangwz

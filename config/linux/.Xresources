@@ -1,0 +1,98 @@
+!!$HOME/.Xdefaults
+!! urxvtd -q -f -o
+!! xrdb ~/.Xresources
+!! xcompmgr
+!! 调整此处设置输入法
+URxvt.inputMethod:fcitx
+URxvt.preeditType:OffTheSpot
+!!颜色设置
+URxvt.depth:32
+!!中括号内数表示透明度
+! special
+URxvt.foreground: #93a1a1
+URxvt.background: [92]#141c21
+URxvt.cursorColor: #afbfbf
+
+! black
+URxvt.color0: #263640
+URxvt.color8: #4a697d
+
+! red
+URxvt.color1: #d12f2c
+URxvt.color9: #fa3935
+
+! green
+URxvt.color2: #819400
+URxvt.color10: #a4bd00
+
+! yellow
+URxvt.color3: #b08500
+URxvt.color11: #d9a400
+
+! blue
+URxvt.color4: #2587cc
+URxvt.color12: #2ca2f5
+
+! magenta
+URxvt.color5: #696ebf
+URxvt.color13: #8086e8
+
+! cyan
+URxvt.color6: #289c93
+URxvt.color14: #33c5ba
+
+! white
+URxvt.color7: #bfbaac
+URxvt.color15: #fdf6e3
+!!标签设置
+! URxvt.perl-ext-common: default,tabbed,matcher,clipboard
+URxvt.perl-ext-common: default,matcher,resize-font
+URxvt.tabbed.tab-fg: 12
+URxvt.tabbed.tab-bg: 0
+URxvt.tabbed.tabbar-fg: 4
+Rxvt.menu:/etc/X11/rxvt.menu
+!!复制黏贴
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+!!URL操作
+URxvt.urlLauncher:firefox
+URxvt.matcher.button:1
+
+!!fontsize操作
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
+
+!!滚动条设置
+URxvt.scrollBar:True
+URxvt.scrollBar_right:True
+URxvt.scrollBar_floating:False
+URxvt.scrollstyle:plain
+!!滚屏设置
+URxvt.mouseWheelScrollPage:True
+URxvt.scrollTtyOutput:False
+URxvt.scrollWithBuffer:True
+URxvt.scrollTtyKeypress:True
+!!光标闪烁
+URxvt.cursorBlink:True
+URxvt.saveLines:3000
+!!边框
+URxvt.borderLess:False
+!!字体设置
+Xft.dpi:96
+! URxvt.font:xft:monofur:size=11:style=Regular:antialias=true,xft: WenQuanYi Micro Hei Mono:size=14:style=Regular:antialias=true
+! URxvt.boldfont:xft:monofur:size=11:style=bold:antialias=true,xft:WenQuanYi Micro Hei Mono:size=14:style=Bold:antialias=true
+URxvt.font:xft:Monofur\ for\ Powerline:size=14:style=Regular:antialias=true,xft:WenQuanYi Micro Hei Mono Light:size=12:style=Regular:antialias=true,xft:DejaVuSansMono Nerd Font Mono:pixelsize=16
+!! URxvt.font:xft:Monofur\ for\ Powerline:size=11:style=Regular:antialias=true,xft:WenQuanYi Micro Hei Mono Light:size=12:style=Regular:antialias=true,xft:Symbola 
+URxvt.boldfont:xft:Monofur\ Bold\ for\ Powerline:size=11:style=bold:antialias=true,xft:WenQuanYi Micro Hei Mono Light:size=12:style=Bold:antialias=true,xft:DejaVuSansMono Nerd Font Mono:pixelsize=16
+! URxvt.termName: rxvt-256color
+URxvt.termName: rxvt-unicode-256color
+! URxvt.termName: xterm-256color
+
+uRxvt.secondaryWheel: 1
+URxvt*altSendsEscape: true
+
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Emacs.FontBackend: xft

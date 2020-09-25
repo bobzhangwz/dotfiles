@@ -1,0 +1,23 @@
+remove Lock = Caps_Lock
+remove Control = Control_R
+remove Control = Control_L
+
+keysym Control_R = Control_L
+keysym Caps_Lock = Control_R
+
+add Lock = Caps_Lock
+add Control = Control_R
+add Control = Control_L
+add Lock = Menu
+
+! in arch vbox of mac
+! clear mod1
+! clear mod4
+! keycode 64 = Super_L
+! keycode 205 = Super_L
+! keycode 207 = Alt_L Meta_L
+! keycode 133 = Alt_L Meta_L
+! add mod1 = Alt_R Alt_L Meta_L
+! add mod4 = Super_L Hyper_L Super_L  Super_R
+! super: 133 207
+! option: 64 205
