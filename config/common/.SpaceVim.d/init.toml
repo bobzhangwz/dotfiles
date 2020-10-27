@@ -96,5 +96,7 @@ default_height = 30
     "html",
     "css",
     "sh",
-    "vue"
+    "vue",
+    "scala",
+    "purescript"
   ]
