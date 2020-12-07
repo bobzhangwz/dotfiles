@@ -215,7 +215,7 @@ myKeys conf@XConfig {XMonad.modMask = modMask} =
     -- Deincrement the number of windows in the master area
   , ((modMask, xK_period), sendMessage (IncMasterN (-1)))
     -- Restart xmonad
-  , ((modMask, xK_q), restart "xmonad" True)
+  -- , ((modMask, xK_q), restart "xmonad" True)
     -- to hide/unhide the panel
   , ((modMask, xK_b), sendMessage ToggleStruts)
   ] ++
@@ -252,10 +252,12 @@ comboKeymap = [
     --- GridSelect
     , ("C-; o o", spawnSelected def{gs_font = "xft:monofur for Powerline:size=14"} myGSCmd)
     , ("C-; o p", goToSelected myGSConfig)
+    , ("C-; o q",  restart "xmonad" True)
     , ("C-; o k", kill)
     , ("C-; o c", spawn "deepin-screenshot")
-    -- , ("C-; o l", spawn "xscreensaver-command -lock")
-    , ("C-; o l", spawn "dm-tool lock")
+    , ("C-; o l", spawn "xfce4-screensaver-command -l")
+    -- , ("C-; o l", spawn "lxdm -c USER_SWITCH")
+    -- , ("C-; o l", spawn "dm-tool lock")
     , ("<XF86AudioRaiseVolume>", spawn "amixer sset Master 5%+")
     , ("<XF86AudioLowerVolume>", spawn "amixer sset Master 5%-")
     , ("M--", spawn "amixer sset Master 8%-")

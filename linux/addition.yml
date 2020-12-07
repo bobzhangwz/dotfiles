@@ -15,5 +15,7 @@
       aur:
         use: yay
         name:
-          - okular 
+          - okular
           - code
+          - screenkey
+          - byzanz

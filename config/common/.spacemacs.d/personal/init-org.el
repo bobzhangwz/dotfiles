@@ -1,4 +1,3 @@
-
 (use-package org-protocol)
 
 (with-eval-after-load 'org
@@ -10,15 +9,14 @@
           org-refile-targets '((nil :maxlevel . 9)
                                (org-agenda-files :maxlevel . 9))
           org-refile-use-outline-path t
-          org-ellipsis "⚭"
+          org-ellipsis "ζ"
           org-agenda-include-diary t
-          org-indent-mode nil 
-          org-superstar-headline-bullets-list '("①" "②" "③"
-                                    "④" "⑤" "⑥" "⑦"
-                                    "⑧" "⑨" "⑩" "⑪"
-                                    "⑫" "⑬" "⑭"
-                                    "⑮" "⑯" "⑰"
-                                    "⑱" "⑲" "⑳")
+          org-indent-mode nil
+          org-superstar-headline-bullets-list '("壹" "贰" "叁"
+                                                "肆" "伍" "陆")
+          ;; org-superstar-headline-bullets-list '("α" "β" "ε"
+          ;;                                       "δ" "ζ" "θ"
+          ;;                                       "ι" "η")
           org-todo-keywords '((sequence "PLAN(p)" "STARTED(s!)" "|" "COMPLETE(o!)" "CANCELLED(c@/!)")
                               (sequence "TODO(t)" "|" "DONE(d!)"))
           org-tag-alist '(("@work" . ?w) ("@home" . ?h) ("laptop" . ?l))
@@ -31,7 +29,7 @@
                                   ("b" "Book Reading" entry (file+olp org-default-notes-file "Reading" "Book")
                                    "** PLAN %^{Book}\n    %u\n" :clock-in t :clock-resume t)
 
-                                  ("t" "Todo" entry (file+headline org-default-notes-file "Todo") 
+                                  ("t" "Todo" entry (file+headline org-default-notes-file "Todo")
                                    "** TODO %^{Task}\n    %u\n" :clock-in t :clock-resume t)
 
                                   ("i" "Ideas" entry (file+headline org-default-notes-file "Ideas")
