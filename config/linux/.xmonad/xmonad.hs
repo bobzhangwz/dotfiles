@@ -122,6 +122,7 @@ myCommands = [
   , ("outlook_rea", spawn . chrome $ "https://outlook.office.com/calendar/view/week")
   , ("zeplin", spawn . chrome $ "https://app.zeplin.io/project/5d3e294dd20d6b0dd909d8ed/")
   , ("music163", spawn . chrome $ "https://music.163.com/#/my/m/music/playlist")
+  , ("dingding", spawn . chrome $ "https://im.dingtalk.com/")
   , ("evernote", spawn "google-chrome-stable --app=https://app.yinxiang.com/Home.action --enable-extensions")
   , ("terminal_cfw", spawn . withProxy $ myTerminal)
   ] where
@@ -388,7 +389,7 @@ myLayout = PerW.onWorkspaces ["gimp"] gimpLayout customLayout
                    mkToggle1 REFLECTY $
                    mkToggle1 MIRROR $
                    mkToggle1 NOBORDERS $
-                   smartBorders $
+                   -- smartBorders $
                    -- Full
                    tiled
                    ||| mosaic 1.5 [7,5,2]

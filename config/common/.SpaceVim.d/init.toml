@@ -27,7 +27,13 @@
     bootstrap_before = "myspacevim#before"
     bootstrap_after = "myspacevim#after"
     autocomplete_method = 'coc'
+    # windows_smartclose = ''
     project_rooter_patterns = ['.git/', '_darcs/', '.hg/', '.bzr/', '.svn/', '!out/']
+
+
+[[custom_plugins]]
+name = "ntpeters/vim-better-whitespace"
+merged = false
 
 # Enable autocomplete layer
 [[layers]]

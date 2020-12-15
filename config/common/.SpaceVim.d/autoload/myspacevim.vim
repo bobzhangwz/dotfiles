@@ -3,6 +3,8 @@ function! myspacevim#before() abort
     autocmd!
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript
   augroup END
+  let g:better_whitespace_enabled=1
+  let g:strip_whitespace_on_save=1
 endfunction
 
 function! myspacevim#after() abort

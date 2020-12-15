@@ -56,10 +56,10 @@ DISABLE_AUTO_UPDATE="true"
 
 plugins=(git gem ruby \
              scala sbt \
-             node npm nvm vagrant \
+             node npm vagrant \
              gitignore archlinux \
-             docker z sudo systemd copyfile copydir tig docker \
-             github )
+             docker z sudo systemd copyfile copydir tig docker asdf \
+             github aws docker-compose emoji kubectl kops sbt scala terraform)
 
 # User configuration
 
@@ -113,9 +113,7 @@ export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 [[ -r /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
 [[ -r ~/usr/aws-shortcuts/aws-shortcuts.sh ]] && source ~/usr/aws-shortcuts/aws-shortcuts.sh
 if [[ -d /opt/asdf-vm ]]; then
-  . /opt/asdf-vm/asdf.sh
   export JAVA_HOME=$(asdf where java adopt-openjdk-11.0.7+10)
-  # . /opt/asdf-vm/completions/asdf.bash
 fi
 alias ls="ls -F --color=auto"
 alias vi="nvim"
