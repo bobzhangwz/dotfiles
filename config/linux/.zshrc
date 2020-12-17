@@ -113,6 +113,7 @@ export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 [[ -r /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
 [[ -r ~/usr/aws-shortcuts/aws-shortcuts.sh ]] && source ~/usr/aws-shortcuts/aws-shortcuts.sh
 if [[ -d /opt/asdf-vm ]]; then
+  . /opt/asdf-vm/asdf.sh
   export JAVA_HOME=$(asdf where java adopt-openjdk-11.0.7+10)
 fi
 alias ls="ls -F --color=auto"
