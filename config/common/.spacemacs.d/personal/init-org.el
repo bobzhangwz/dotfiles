@@ -8,6 +8,7 @@
                                  (concat org-directory "inbox.org"))
           org-refile-targets '((nil :maxlevel . 9)
                                (org-agenda-files :maxlevel . 9))
+          org-startup-with-inline-images t
           org-refile-use-outline-path t
           org-ellipsis "ζ"
           org-agenda-include-diary t
