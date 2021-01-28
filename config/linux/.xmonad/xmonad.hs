@@ -66,6 +66,9 @@ colorFocusedBorder  = "#FF0000"
 xftFont = "xft:monofur for Powerline:size=14"
 --}}}
 
+(~=?) :: Eq a => Query [a] -> [a] -> Query Bool
+q ~=? x = fmap (isPrefixOf x) q
+
 --myTerminal = "xfce4-terminal"
 myTerminal = "urxvtc"
 
@@ -148,8 +151,8 @@ myStartupHook = do
     spawn "xset -b"
     -- spawn "sleep 0.5; xrandr --output eDP1 --mode 1920x1080"
     -- spawn $ chromeApp "https://app.slack.com/client/T027TU47K/GQHU1Q8QZ"
-    spawn $ chromeApp "https://calendar.google.com/calendar/b/1/r"
-    spawn $ chromeApp "https://mail.google.com/mail/u/1/#inbox"
+    -- spawn $ chromeApp "https://calendar.google.com/calendar/b/1/r"
+    -- spawn $ chromeApp "https://mail.google.com/mail/u/1/#inbox"
     -- spawn "sleep 6; mailspring"
     -- spawnOn "shell" "sleep 2 && urxvtc -T urxvt_shell -e tmux new-session -A -s workspace"
     spawn "sleep 2; xfce4-panel -r"
@@ -327,30 +330,38 @@ myPromptKeymap = [
 -------- scratchpads
 scratchpadsKeymaps :: [(String, X ())]
 scratchpadsKeymaps = [
+    ("M-d", namedScratchpadAction scratchpads "dict"),
     ("C-' d", namedScratchpadAction scratchpads "dict"),
     ("C-' s", namedScratchpadAction scratchpads "scala"),
     ("C-' e", namedScratchpadAction scratchpads "emacs"),
     ("C-' w", namedScratchpadAction scratchpads "wechat"),
     ("C-' h", namedScratchpadAction scratchpads "htop"),
     ("C-' a", namedScratchpadAction scratchpads "alsamixer"),
-    ("C-' c", namedScratchpadAction scratchpads "calendar"),
+    ("M-c", namedScratchpadAction scratchpads "calendar"),
+    ("M-m", namedScratchpadAction scratchpads "mail"),
     ("C-' z", namedScratchpadAction scratchpads "zsh"),
     ("C-' r", namedScratchpadAction scratchpads "ranger"),
-    ("M-\\", namedScratchpadAction scratchpads "fly_terminal")
+    ("M-\\", namedScratchpadAction scratchpads "fly_terminal"),
+    ("M-/", namedScratchpadAction scratchpads "firefox")
   ]
 
 scratchpads =
   map f ["ghci", "node", "alsamixer", "htop", "scala", "zsh", "ranger"] ++
   [
-  NS "dict" (chrome "http://dict.youdao.com/") (title =? "dict") doTopRightFloat
-  , NS "emacs" "urxvtc -T emacsnw -e emacsclient '-nw'" (title =? "emacsnw") doTopRightFloat
+  NS "dict" (chrome "http://dict.youdao.com/") (name ~=? "dict.youdao.com") doTopRightFloat
+  , NS "emacs" "urxvtc -T emacsnw -e emacsclient '-nw'" (title =? "emacsnw") doRightFloat
   , NS "wechat" (chrome "https://wx.qq.com/?lang=zh_CN") (title =? "g-wechat") doTopRightFloat
-  , NS "calendar" (chrome "https://calendar.google.com/calendar/") (title =? "g-calendar") doSPFloat
+  , NS "calendar" (chrome "https://calendar.google.com/calendar/b/1/r") (name ~=? "calendar.google.com__calendar") doRightFloat
+  , NS "mail" (chrome "https://mail.google.com/mail/u/1/#inbox") (name ~=? "mail.google.com__mail") doRightFloat
   , NS "fly_terminal" "urxvtc -T fly_terminal -e tmux new-session -A -s main"  (title =? "fly_terminal") doTopFloat
+  , NS "firefox" "firefox"  (name ~=? "Navigator") doRightFloat
   ]
   where
     urxvt prog = ("urxvtc -T "++) . ((++) . head $ words prog) . (" -e "++) . (prog++) $ ""
     f s = NS s (urxvt s) (title =? s) doTopRightFloat
+
+    name :: Query String
+    name = stringProperty "WM_CLASS"
 
     chrome url = "google-chrome-stable --app=" ++ url
 
@@ -360,7 +371,8 @@ scratchpads =
     doTopRightFloat = customFloating $ W.RationalRect (2/3) 0 (1/3) (1/3)
     doBottomLeftFloat = customFloating $ W.RationalRect 0 (2/3) (1/3) (1/3)
     doBottomRightFloat = customFloating $ W.RationalRect (2/3) (2/3) (1/3) (1/3)
-    doLeftFloat = customFloating $ W.RationalRect 0 0 (1/3) 1
+    doLeftFloat = customFloating $ W.RationalRect 0 (1/40) (1/3) 1
+    doRightFloat = customFloating $ W.RationalRect (1/3) (1/20) (2/3) (9/20)
     orgFloat = customFloating $ W.RationalRect (1/2) (1/2) (1/2) (1/2)
 
 ---------------------------------------------------------------------
@@ -470,9 +482,6 @@ myManageHook = composeAll $ concat [
     myMedia = ["Rhythmbox","Spotify","Boxee","Trine"]
     myVBox = ["Oracle VM VirtualBox Manager", "VirtualBox", "VirtualBox Manager"]
     myShell = ["urxvt_shell"]
-
-    (~=?) :: Eq a => Query [a] -> [a] -> Query Bool
-    q ~=? x = fmap (isPrefixOf x) q
 
     doShiftAndGo = doF . liftM2 (.) W.greedyView W.shift
 
