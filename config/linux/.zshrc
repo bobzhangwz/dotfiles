@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 export OKTA_USERNAME='bo.zhang'
 export TERM=rxvt-256color
-export PATH="$PATH:$HOME/usr/rea-slip-utils/bin:$HOME/.local/bin:$HOME/.yarn/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.local/share/coursier/bin"
 
 export PATH="/usr/lib/jvm/java-8-jdk/bin:$PATH"
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'

@@ -132,7 +132,7 @@ myCommands = [
      chrome url = "google-chrome-stable --app=" ++ url
 
 myStartupHook = do
-    spawnOn "web" "firefox"
+    -- spawnOn "web" "firefox"
     -- spawnOn "vbox" "virtualbox"
     spawn "urxvtd -q -f -o"
     spawn "emacs -daemon"
@@ -334,6 +334,7 @@ scratchpadsKeymaps = [
     ("C-' d", namedScratchpadAction scratchpads "dict"),
     ("C-' s", namedScratchpadAction scratchpads "scala"),
     ("C-' e", namedScratchpadAction scratchpads "emacs"),
+    ("M-e", namedScratchpadAction scratchpads "emacs"),
     ("C-' w", namedScratchpadAction scratchpads "wechat"),
     ("C-' h", namedScratchpadAction scratchpads "htop"),
     ("C-' a", namedScratchpadAction scratchpads "alsamixer"),
@@ -342,7 +343,8 @@ scratchpadsKeymaps = [
     ("C-' z", namedScratchpadAction scratchpads "zsh"),
     ("C-' r", namedScratchpadAction scratchpads "ranger"),
     ("M-\\", namedScratchpadAction scratchpads "fly_terminal"),
-    ("M-/", namedScratchpadAction scratchpads "firefox")
+    ("M-/", namedScratchpadAction scratchpads "firefox"),
+    ("M-.", namedScratchpadAction scratchpads "chrome")
   ]
 
 scratchpads =
@@ -355,6 +357,7 @@ scratchpads =
   , NS "mail" (chrome "https://mail.google.com/mail/u/1/#inbox") (name ~=? "mail.google.com__mail") doRightFloat
   , NS "fly_terminal" "urxvtc -T fly_terminal -e tmux new-session -A -s main"  (title =? "fly_terminal") doTopFloat
   , NS "firefox" "firefox"  (name ~=? "Navigator") doRightFloat
+  , NS "chrome" "google-chrome-stable"  (name ~=? "google-chrome") doRightFloat
   ]
   where
     urxvt prog = ("urxvtc -T "++) . ((++) . head $ words prog) . (" -e "++) . (prog++) $ ""
@@ -372,7 +375,8 @@ scratchpads =
     doBottomLeftFloat = customFloating $ W.RationalRect 0 (2/3) (1/3) (1/3)
     doBottomRightFloat = customFloating $ W.RationalRect (2/3) (2/3) (1/3) (1/3)
     doLeftFloat = customFloating $ W.RationalRect 0 (1/40) (1/3) 1
-    doRightFloat = customFloating $ W.RationalRect (1/3) (1/20) (2/3) (9/20)
+    doRightFloat = customFloating $ W.RationalRect (1/10) (1/36) (9/10) (9/10)
+
     orgFloat = customFloating $ W.RationalRect (1/2) (1/2) (1/2) (1/2)
 
 ---------------------------------------------------------------------

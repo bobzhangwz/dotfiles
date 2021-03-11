@@ -35,6 +35,7 @@ This function should only modify configuration layer settings."
      rust
      ansible
      csv
+     neotree
      (javascript :variables
                  js2-basic-offset 2
                  js-indent-level 2
@@ -565,6 +566,8 @@ you should place your code here."
       (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
     :config
     (bind-key "C-c b" 'org-brain-prefix-map org-mode-map)
+    (setq neo-theme 'arrow
+          neo-vc-integration '(char))
     (setq org-id-track-globally t)
     (setq org-brain-refile-max-level 9)
     (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
