@@ -432,7 +432,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc...
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
-   dotspacemacs-smart-closing-parenthesis nil
+   dotspacemacs-smart-closing-parenthesis t
 
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
@@ -558,6 +558,7 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (push "~/.spacemacs.d/personal/" load-path)
   (use-package init-org)
+  (use-package helloworld)
   (use-package org-brain :ensure t
     :init
     (setq org-brain-path "~/notes/brain")
