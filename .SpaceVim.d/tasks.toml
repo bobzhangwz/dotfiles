@@ -1,0 +1,3 @@
+[my-command]
+  command = 'echo'
+  args = ['hello world']

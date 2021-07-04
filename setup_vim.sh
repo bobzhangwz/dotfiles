@@ -3,10 +3,10 @@
 set -euxo pipefail
 asdf plugin add nodejs
 asdf plugin add yarn
-asdf plugin add scala 
-asdf plugin add java 
+asdf plugin add scala
+asdf plugin add java
 asdf install java openjdk-11
-asdf install java adoptopenjdk-8.0.252+9.1 
+asdf install java adoptopenjdk-8.0.252+9.1
 asdf install scala 2.13.3
 asdf install yarn 1.22.5
 asdf global yarn 1.22.5
@@ -33,5 +33,7 @@ npm i -g bash-language-server \
   javascript-typescript-langserver \
   purescript-language-server \
   vue-language-server \
-  vscode-css-languageserver-bin
+  vscode-css-languageserver-bin \
+  neovim
+
 
