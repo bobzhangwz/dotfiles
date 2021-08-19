@@ -11,18 +11,6 @@ asdf install scala 2.13.3
 asdf install yarn 1.22.5
 asdf global yarn 1.22.5
 
-curl -L -o coursier https://git.io/coursier-cli
-
-chmod +x coursier
-./coursier bootstrap \
-  --java-opt -Xss4m \
-  --java-opt -Xms100m \
-  --java-opt -Dmetals.client=emacs \
-  org.scalameta:metals_2.12:0.9.1 \
-  -r bintray:scalacenter/releases \
-  -r sonatype:snapshots \
-  -o /usr/local/bin/metals-emacs -f
-
 bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 asdf install nodejs 14.4.0
 asdf global nodejs 14.4.0
@@ -36,4 +24,14 @@ npm i -g bash-language-server \
   vscode-css-languageserver-bin \
   neovim
 
+brew install coursier/formulas/coursier
+
+coursier bootstrap \
+  --java-opt -Xss4m \
+  --java-opt -Xms100m \
+  --java-opt -Dmetals.client=emacs \
+  org.scalameta:metals_2.12:0.9.1 \
+  -r bintray:scalacenter/releases \
+  -r sonatype:snapshots \
+  -o /usr/local/bin/metals-emacs -f
 
