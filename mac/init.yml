@@ -25,6 +25,7 @@
         - asdf
         - gpg
         - neovim
+        - docker
 
     - name: install cask
       homebrew_cask:
@@ -75,4 +76,10 @@
         - zoom
         - vlc
         - tecent-lemon
+        - aria2gui
+        - google-chrome
+        - jietu
+        - franz
+        - neteasemusic
+        - authy
 

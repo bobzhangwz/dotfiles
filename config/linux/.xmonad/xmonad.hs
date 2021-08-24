@@ -335,6 +335,9 @@ scratchpadsKeymaps = [
     ("C-' s", namedScratchpadAction scratchpads "scala"),
     ("C-' e", namedScratchpadAction scratchpads "emacs"),
     ("M-e", namedScratchpadAction scratchpads "emacs"),
+    ("C-' v", namedScratchpadAction scratchpads "nvim"),
+    ("M-v", namedScratchpadAction scratchpads "nvim"),
+    ("M-a", namedScratchpadAction scratchpads "authy"),
     ("C-' w", namedScratchpadAction scratchpads "wechat"),
     ("C-' h", namedScratchpadAction scratchpads "htop"),
     ("C-' a", namedScratchpadAction scratchpads "alsamixer"),
@@ -352,11 +355,13 @@ scratchpads =
   [
   NS "dict" (chrome "http://dict.youdao.com/") (name ~=? "dict.youdao.com") doTopRightFloat
   , NS "emacs" "urxvtc -T emacsnw -e emacsclient '-nw'" (title =? "emacsnw") doRightFloat
+  , NS "nvim" "urxvtc -T nvim -e nvim" (title =? "nvim") doRightFloat
   , NS "wechat" (chrome "https://wx.qq.com/?lang=zh_CN") (title =? "g-wechat") doTopRightFloat
   , NS "calendar" (chrome "https://calendar.google.com/calendar/b/1/r") (name ~=? "calendar.google.com__calendar") doRightFloat
   , NS "mail" (chrome "https://mail.google.com/mail/u/1/#inbox") (name ~=? "mail.google.com__mail") doRightFloat
   , NS "fly_terminal" "urxvtc -T fly_terminal -e tmux new-session -A -s main"  (title =? "fly_terminal") doTopFloat
   , NS "firefox" "firefox"  (name ~=? "Navigator") doRightFloat
+  , NS "authy" "authy"  (name ~=? "authy desktop") doTopRightFloat
   , NS "chrome" "google-chrome-stable"  (name ~=? "google-chrome") doRightFloat
   ]
   where
