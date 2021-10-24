@@ -119,13 +119,12 @@ myCommands = [
   , ("mail_self", spawn . chrome $ "https://mail.google.com/mail/u/0/#inbox")
   , ("trello", spawn . chrome $ "https://trello.com/b/5k7cKgLN/works")
   , ("notion", spawn . chrome $ "https://www.notion.so/zhpooer/e0414f48794f4709b8ef86a21c9437a8?v=d087bd7e392a4cc48b85f3c5d8696400")
-  , ("todoist", spawn . chrome $ "https://todoist.com/app#project%2F377591330")
   , ("jira", spawn . chrome $ "https://reagroup.atlassian.net/secure/RapidBoard.jspa?rapidView=745")
   , ("slack", spawn . chrome $ "https://app.slack.com/client/T027TU47K/GQHU1Q8QZ")
-  , ("outlook_rea", spawn . chrome $ "https://outlook.office.com/calendar/view/week")
   , ("zeplin", spawn . chrome $ "https://app.zeplin.io/project/5d3e294dd20d6b0dd909d8ed/")
   , ("music163", spawn . chrome $ "https://music.163.com/#/my/m/music/playlist")
   , ("dingding", spawn . chrome $ "https://im.dingtalk.com/")
+  , ("dida", spawn . chrome $ "https://dida365.com/webapp/")
   , ("evernote", spawn "google-chrome-stable --app=https://app.yinxiang.com/Home.action --enable-extensions")
   , ("terminal_cfw", spawn . withProxy $ myTerminal)
   ] where
@@ -351,11 +350,10 @@ scratchpadsKeymaps = [
   ]
 
 scratchpads =
-  map f ["ghci", "node", "alsamixer", "htop", "scala", "zsh", "ranger"] ++
+  map f ["ghci", "node", "alsamixer", "htop", "scala", "zsh", "ranger", "nvim"] ++
   [
   NS "dict" (chrome "http://dict.youdao.com/") (name ~=? "dict.youdao.com") doTopRightFloat
   , NS "emacs" "urxvtc -T emacsnw -e emacsclient '-nw'" (title =? "emacsnw") doRightFloat
-  , NS "nvim" "urxvtc -T nvim -e nvim" (title =? "nvim") doRightFloat
   , NS "wechat" (chrome "https://wx.qq.com/?lang=zh_CN") (title =? "g-wechat") doTopRightFloat
   , NS "calendar" (chrome "https://calendar.google.com/calendar/b/1/r") (name ~=? "calendar.google.com__calendar") doRightFloat
   , NS "mail" (chrome "https://mail.google.com/mail/u/1/#inbox") (name ~=? "mail.google.com__mail") doRightFloat
