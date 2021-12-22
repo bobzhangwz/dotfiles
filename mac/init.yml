@@ -21,8 +21,11 @@
         - ispell
         - fzf
         - z
+        - kubectl
         - asdf
+        - gpg
         - neovim
+        - docker
 
     - name: install cask
       homebrew_cask:
@@ -58,12 +61,25 @@
     - name: install powerline fonts
       shell: bash /tmp/fonts/install.sh
 
-    - name: install additional cask
-      homebrew_cask:
-        package:
-        - vlc
     - name: install tpm
       git:
         repo: https://github.com/tmux-plugins/tpm
         dest: ~/.tmux/plugins/tpm
+
+    - name: install additional cask
+      homebrew_cask:
+        package:
+        - gas-mask
+        - hiddenbar
+        - wechatwork
+        - visual-studio-code
+        - zoom
+        - vlc
+        - tecent-lemon
+        - aria2gui
+        - google-chrome
+        - jietu
+        - franz
+        - neteasemusic
+        - authy
 

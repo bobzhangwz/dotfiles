@@ -46,7 +46,9 @@
           - global
           - deepin-screenshot
           - v2ray
-          - qv2ray
+          - qv2ray-static-bin-nightly
+          - franz-bin
+          - authy
 
     - name: clone powerline fonts
       git:
