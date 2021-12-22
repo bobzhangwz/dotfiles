@@ -64,12 +64,12 @@ POWERLINE_NO_BLANK_LINE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gem ruby \
-             mvn scala sbt tmux tmuxinator \
-             node npm nvm vagrant yarn fzf osx \
+plugins=(git gem ruby asdf \
+             mvn scala sbt tmux \
+             node npm vagrant yarn fzf macos \
              gitignore vscode \
-             docker z sudo copyfile copydir tig \
-             github )
+             docker docker-compose z sudo copyfile copydir tig \
+             github brew emoji)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -115,6 +115,5 @@ alias tm="tmux attach"
 export SBT_OPTS="-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=1024M"
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[ -f $(brew --prefix asdf)/asdf.sh ] && . $(brew --prefix asdf)/asdf.sh
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-source <(kubectl completion zsh) 
+source <(kubectl completion zsh)

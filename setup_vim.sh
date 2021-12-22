@@ -18,14 +18,14 @@ chmod +x coursier
   --java-opt -Xss4m \
   --java-opt -Xms100m \
   --java-opt -Dmetals.client=emacs \
-  org.scalameta:metals_2.12:0.9.1 \
+  org.scalameta:metals_2.12:0.10.9 \
   -r bintray:scalacenter/releases \
   -r sonatype:snapshots \
   -o /usr/local/bin/metals-emacs -f
 
 bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
-asdf install nodejs 14.4.0
-asdf global nodejs 14.4.0
+asdf install nodejs lts
+asdf global nodejs lts
 npm install -g eslint-cli
 npm install -g js-beautify
 npm install -g vscode-html-languageserver-bin
