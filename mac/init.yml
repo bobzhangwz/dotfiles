@@ -11,6 +11,7 @@
         - fd
         - coreutils
         - dos2unix
+        - cmake
         - jq
         - tmux
         - tree
@@ -79,4 +80,8 @@
         - franz
         - neteasemusic
         - authy
-
+        - ticktick
+        - clashx
+        - termius
+        - youdaodict
+        - 1password
