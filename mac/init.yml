@@ -30,9 +30,6 @@
     - name: install cask
       homebrew_cask:
         package:
-        - iterm2
-        - alfred
-        - firefox
         - emacs
         - the-unarchiver
         - wechat
