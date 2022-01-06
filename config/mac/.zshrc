@@ -64,12 +64,12 @@ POWERLINE_NO_BLANK_LINE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gem ruby asdf \
+plugins=(git asdf gh npm \
              mvn scala sbt tmux \
-             node npm vagrant yarn fzf macos \
-             gitignore vscode \
+             node vagrant yarn fzf macos \
+             gitignore vscode minikube aws kubectl spring \
              docker docker-compose z sudo copyfile copydir tig \
-             github brew emoji)
+             brew emoji)
 
 source $ZSH/oh-my-zsh.sh
 
