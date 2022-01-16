@@ -11,6 +11,7 @@
         - fd
         - coreutils
         - dos2unix
+        - cmake
         - jq
         - tmux
         - tree
@@ -30,9 +31,6 @@
     - name: install cask
       homebrew_cask:
         package:
-        - iterm2
-        - alfred
-        - firefox
         - emacs
         - the-unarchiver
         - wechat
@@ -82,4 +80,9 @@
         - franz
         - neteasemusic
         - authy
-
+        - ticktick
+        - clashx
+        - termius
+        - youdaodict
+        - 1password
+        - intellij-idea

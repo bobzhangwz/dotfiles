@@ -31,7 +31,10 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layer-path '("~/.spacemacs.d/layers/")
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(vimscript
+   '(systemd
+     systemd
+     python
+     vimscript
      rust
      ansible
      csv
@@ -63,7 +66,9 @@ This function should only modify configuration layer settings."
      (markdown :variables markdown-live-preview-engine 'vmd)
      (org :variables org-enable-reveal-js-support t
           org-enable-bootstrap-support t
-          org-enable-github-support t)
+          org-enable-github-support t
+          org-enable-org-brain-support t
+          )
      chinese
      ;; web-mode
      (shell :variables
@@ -271,7 +276,7 @@ It should only modify the values of Spacemacs settings."
    ;;                             :width normal
    ;;                             :powerline-scale 1.1)
    dotspacemacs-default-font '("monofur for Powerline"
-                               :size 30
+                               :size 20
                                :weight normal
                                :width normal
                                :powerline-scale 1.4)
@@ -583,9 +588,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (push "~/.spacemacs.d/personal/" load-path)
-  (use-package init-org)
-  (use-package helloworld)
   (use-package org-brain :ensure t
     :init
     (setq org-brain-path "~/notes/brain")
@@ -600,18 +602,24 @@ you should place your code here."
     (setq org-brain-refile-max-level 9)
     (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
     (add-hook 'before-save-hook #'org-brain-ensure-ids-in-buffer)
-    (push '("b" "Brain" plain (function org-brain-goto-end)
-            "* %i%?" :empty-lines 1)
-          org-capture-templates)
+    ;; (push '("b" "Brain" plain (function org-brain-goto-end)
+    ;;         "* %i%?" :empty-lines 1)
+    ;;       org-capture-templates)
     (setq org-brain-visualize-default-choices 'all)
     (setq org-brain-title-max-length 12)
     (setq org-brain-include-file-entries t
-          org-brain-file-entries-use-title t))
+          org-brain-file-entries-use-title t)
+    )
 
-  ;; Allows you to edit entries directly from org-brain-visualize
-  (use-package polymode
-    :config
-    (add-hook 'org-brain-visualize-mode-hook #'org-brain-polymode))
+  ;; ;; Allows you to edit entries directly from org-brain-visualize
+  ;; (use-package polymode
+  ;;   :config
+  ;;   (add-hook 'org-brain-visualize-mode-hook #'org-brain-polymode)
+  ;;   )
+  (push "~/.spacemacs.d/personal/" load-path)
+  (use-package init-org)
+  (use-package helloworld)
+
 
   (global-set-key (kbd "C-v") (lambda () (interactive) (forward-line 10)))
   (global-set-key (kbd "M-v") (lambda () (interactive) (forward-line -10)))
@@ -640,7 +648,7 @@ you should place your code here."
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
-  (spacemacs//set-monospaced-font "monofur for Powerline" "WenQuanYi Micro Hei Mono" 30 28)
+  (spacemacs//set-monospaced-font "monofur for Powerline" "WenQuanYi Micro Hei Mono" 24 24)
   (set-face-font 'variable-pitch "Space Mono for Powerline")
   (copy-face 'variable-pitch 'fixed-pitch)
 )
