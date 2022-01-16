@@ -1,8 +1,8 @@
 function! myspacevim#before() abort
-  augroup tsx_filetype
-    autocmd!
-    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-  augroup END
+  " augroup tsx_filetype
+    " autocmd!
+    " autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+  " augroup END
 
   let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-html', 'coc-prettier', 'coc-eslint', 'coc-tsserver']
   let g:better_whitespace_enabled=1

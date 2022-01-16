@@ -8,8 +8,8 @@ asdf plugin add java
 asdf install java openjdk-11
 asdf install java adoptopenjdk-8.0.252+9.1
 asdf install scala 2.13.3
-asdf install yarn 1.22.5
-asdf global yarn 1.22.5
+asdf install yarn latest
+asdf global yarn latest
 
 bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 asdf install nodejs lts
