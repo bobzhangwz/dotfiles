@@ -86,8 +86,8 @@ default_height = 30
 [[layers]]
   name = "lang#sh"
 
-[[layers]]
-  name = "lang#typescript"
+# [[layers]]
+  # name = "lang#typescript"
 
 [[layers]]
   name = "lang#dockerfile"
@@ -104,5 +104,6 @@ default_height = 30
     "sh",
     "vue",
     "scala",
-    "purescript"
+    "purescript",
+    "typescript"
   ]

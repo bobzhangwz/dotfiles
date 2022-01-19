@@ -120,7 +120,7 @@ myCommands = [
   , ("trello", spawn . chrome $ "https://trello.com/b/5k7cKgLN/works")
   , ("notion", spawn . chrome $ "https://www.notion.so/zhpooer/e0414f48794f4709b8ef86a21c9437a8?v=d087bd7e392a4cc48b85f3c5d8696400")
   , ("jira", spawn . chrome $ "https://reagroup.atlassian.net/secure/RapidBoard.jspa?rapidView=745")
-  , ("slack", spawn . chrome $ "https://app.slack.com/client/T027TU47K/GQHU1Q8QZ")
+  , ("slack", spawn . chrome $ "https://thoughtworks.slack.com")
   , ("zeplin", spawn . chrome $ "https://app.zeplin.io/project/5d3e294dd20d6b0dd909d8ed/")
   , ("music163", spawn . chrome $ "https://music.163.com/#/my/m/music/playlist")
   , ("dingding", spawn . chrome $ "https://im.dingtalk.com/")
@@ -374,7 +374,7 @@ scratchpads =
     doSPFloat = customFloating $ W.RationalRect (1/6) (1/6) (4/6) (4/6)
     doTopFloat = customFloating $ W.RationalRect 0 (1/40) 1 (5/6)
     doTopLeftFloat = customFloating $ W.RationalRect 0 0 (1/3) (1/3)
-    doTopRightFloat = customFloating $ W.RationalRect (2/3) 0 (1/3) (1/3)
+    doTopRightFloat = customFloating $ W.RationalRect (1/3) 0 (2/3) (1/3)
     doBottomLeftFloat = customFloating $ W.RationalRect 0 (2/3) (1/3) (1/3)
     doBottomRightFloat = customFloating $ W.RationalRect (2/3) (2/3) (1/3) (1/3)
     doLeftFloat = customFloating $ W.RationalRect 0 (1/40) (1/3) 1
