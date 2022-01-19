@@ -27,6 +27,9 @@
         - gpg
         - neovim
         - docker
+        - docker-compose
+        - graphviz
+        - colima
 
     - name: install cask
       homebrew_cask:
