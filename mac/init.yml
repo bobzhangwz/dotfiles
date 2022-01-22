@@ -30,6 +30,7 @@
         - docker-compose
         - graphviz
         - colima
+        - coursier/formulas/coursier
 
     - name: install cask
       homebrew_cask:

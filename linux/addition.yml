@@ -3,16 +3,17 @@
   tasks:
     # cat vs_code_extensions_list.txt | xargs -n 1 code --install-extension
     - name: install additional packages
-      aur:
+      kewlfft.aur.aur:
         use: yay
         name:
+          - nutstore-experimental
+          - intellij-idea-ultimate-edition
+          - jdk11-openjdk
           - sbt
           - scala
-          - intellij-idea-ultimate-edition
-          - jdk8-openjdk
 
     - name: install entertainment packages
-      aur:
+      kewlfft.aur.aur:
         use: yay
         name:
           - okular
