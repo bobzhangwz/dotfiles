@@ -45,6 +45,8 @@
           - wqy-microhei-lite
           - nerd-fonts-dejavu-complete
           - global
+          - docker
+          - chromium
           - deepin-screenshot
           - v2ray
           - gopass

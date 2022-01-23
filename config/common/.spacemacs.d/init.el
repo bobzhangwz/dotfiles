@@ -276,7 +276,7 @@ It should only modify the values of Spacemacs settings."
    ;;                             :width normal
    ;;                             :powerline-scale 1.1)
    dotspacemacs-default-font '("monofur for Powerline"
-                               :size 20
+                               :size 28
                                :weight normal
                                :width normal
                                :powerline-scale 1.4)
@@ -648,7 +648,7 @@ you should place your code here."
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
-  (spacemacs//set-monospaced-font "monofur for Powerline" "WenQuanYi Micro Hei Mono" 24 24)
+  (spacemacs//set-monospaced-font "monofur for Powerline" "WenQuanYi Micro Hei Mono" 28 28)
   (set-face-font 'variable-pitch "Space Mono for Powerline")
   (copy-face 'variable-pitch 'fixed-pitch)
 )
