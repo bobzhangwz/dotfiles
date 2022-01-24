@@ -54,12 +54,13 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git gem ruby \
-             scala sbt \
+plugins=(git gh minikube aws \
+             scala sbt tmux \
              node npm vagrant \
              gitignore archlinux \
              docker z sudo systemd copyfile copydir tig docker asdf \
-             github aws docker-compose emoji kubectl kops sbt scala terraform)
+             aws docker-compose emoji \
+             kubectl kops sbt scala terraform)
 
 # User configuration
 
@@ -103,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 export OKTA_USERNAME='bo.zhang'
 export TERM=rxvt-256color
-export PATH="$PATH:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.local/share/coursier/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 export PATH="/usr/lib/jvm/java-8-jdk/bin:$PATH"
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
@@ -111,7 +112,6 @@ export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 [[ -r /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
 [[ -r /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
-[[ -r ~/usr/aws-shortcuts/aws-shortcuts.sh ]] && source ~/usr/aws-shortcuts/aws-shortcuts.sh
 if [[ -d /opt/asdf-vm ]]; then
   . /opt/asdf-vm/asdf.sh
   export JAVA_HOME=$(asdf where java adopt-openjdk-11.0.7+10)
