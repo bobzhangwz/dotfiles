@@ -444,6 +444,7 @@ myManageHook = composeAll $ concat [
     , [matchAny v --> doShift "media" | v <- myMedia]
     , [matchAny v --> doShift "gimp" | v <- myGimp]
     , [matchAny v --> doShift "vbox" | v <- myVBox]
+    , [matchAny v --> doShift "swap" | v <- mySwap]
     , [matchAny v --> doShift "shell" | v <- myShell]
     -- IntelliJ idea Tweaks
     -- Manage idea completion window
@@ -457,7 +458,9 @@ myManageHook = composeAll $ concat [
         ("info", "calendar.google.com"),
         ("info", "reagroup.atlassian.net"),
         ("info", "outlook.office.com"),
-        ("mail", "mail.google.com")
+        ("info", "dida365.com"),
+        ("mail", "mail.google.com"),
+        ("chat", "wx.qq.com")
       ]
     myCenterFloats = ["Sysinfo", "XMessage", "Smplayer"
                       ,"MPlayer", "nemo", "Thunar"
@@ -472,15 +475,15 @@ myManageHook = composeAll $ concat [
                 "desktop","desktop_window","notify-osd","stalonetray","trayer", "Xfce4-notifyd"]
 
     -- myWorkspaces = ["web", "editor", "ide", "info", "mail", "vbox", "media", "gimp", "swap", "shell"]
-    myWeb = ["Firefox-bin", "Firefox",  "Firefox Web Browser"
-              , "opera", "Opera", "Chromium"]
+    myWeb = ["Firefox-bin", "Firefox",  "Firefox Web Browser", "opera", "Opera", "firefox"]
     myInfo = ["Pidgin Internet Messenger", "Buddy List"
                , "skype", "skype-wrapper", "Skype",
                "Conky", "Station"]
     myEditor = ["geany", "Gvim", "emacs",
               "eclipse", "Eclipse", "jetbrains-idea-ce",
              "jetbrains-idea", "Aptana Studio 3"]
-    myChat = ["zoom"]
+    myChat = ["wxwork.exe"]
+    mySwap = ["zoom", "forticlient"]
     myGimp = ["Gimp", "GIMP Image Editor"]
     myMail = ["Mailspring"]
     myMedia = ["Rhythmbox","Spotify","Boxee","Trine"]
