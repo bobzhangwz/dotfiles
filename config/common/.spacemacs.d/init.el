@@ -648,7 +648,7 @@ you should place your code here."
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
-  (spacemacs//set-monospaced-font "monofur for Powerline" "WenQuanYi Micro Hei Mono" 24 24)
+  (spacemacs//set-monospaced-font "monofur for Powerline" "WenQuanYi Micro Hei Mono" 22 22)
   (set-face-font 'variable-pitch "Space Mono for Powerline")
   (copy-face 'variable-pitch 'fixed-pitch)
 )
