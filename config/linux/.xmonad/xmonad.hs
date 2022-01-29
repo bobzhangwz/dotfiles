@@ -107,7 +107,7 @@ myGSConfig = def {
 myGSCmd :: [String]
 myGSCmd = [
     "emacsclient -c"
-    , "google-chrome-stable --incognito"
+    , "chromium --incognito"
     , "urxvtd -q -f -o"
     , "emacs -daemon"
   ]
@@ -125,10 +125,9 @@ myCommands = [
   , ("music163", spawn . chrome $ "https://music.163.com/#/my/m/music/playlist")
   , ("dingding", spawn . chrome $ "https://im.dingtalk.com/")
   , ("dida", spawn . chrome $ "https://dida365.com/webapp/")
-  , ("evernote", spawn "google-chrome-stable --app=https://app.yinxiang.com/Home.action --enable-extensions")
   , ("terminal_cfw", spawn . withProxy $ myTerminal)
   ] where
-     chrome url = "google-chrome-stable --app=" ++ url
+     chrome url = "chromium --app=" ++ url
 
 myStartupHook = do
     -- spawnOn "web" "firefox"
@@ -157,7 +156,7 @@ myStartupHook = do
     spawn "sleep 2; xfce4-panel -r"
     spawn "picom -CGb --config ~/.picom.conf"
   where
-      chromeApp url = "sleep 2; google-chrome-stable --app=" ++ url
+      chromeApp url = "sleep 2; chromium --app=" ++ url
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -258,6 +257,7 @@ comboKeymap = [
     , ("C-; o q",  restart "xmonad" True)
     , ("C-; o k", kill)
     , ("C-; o c", spawn "deepin-screenshot")
+    -- , ("C-; o l", spawn "xflock4")
     , ("C-; o l", spawn "xfce4-screensaver-command -l")
     -- , ("C-; o l", spawn "lxdm -c USER_SWITCH")
     -- , ("C-; o l", spawn "dm-tool lock")
@@ -335,7 +335,6 @@ scratchpadsKeymaps = [
     ("C-' e", namedScratchpadAction scratchpads "emacs"),
     ("M-e", namedScratchpadAction scratchpads "emacs"),
     ("C-' v", namedScratchpadAction scratchpads "nvim"),
-    ("M-v", namedScratchpadAction scratchpads "nvim"),
     ("M-a", namedScratchpadAction scratchpads "authy"),
     ("C-' w", namedScratchpadAction scratchpads "wechat"),
     ("C-' h", namedScratchpadAction scratchpads "htop"),
@@ -345,7 +344,6 @@ scratchpadsKeymaps = [
     ("C-' z", namedScratchpadAction scratchpads "zsh"),
     ("C-' r", namedScratchpadAction scratchpads "ranger"),
     ("M-\\", namedScratchpadAction scratchpads "fly_terminal"),
-    ("M-/", namedScratchpadAction scratchpads "firefox"),
     ("M-.", namedScratchpadAction scratchpads "chrome")
   ]
 
@@ -358,9 +356,8 @@ scratchpads =
   , NS "calendar" (chrome "https://calendar.google.com/calendar/b/1/r") (name ~=? "calendar.google.com__calendar") doRightFloat
   , NS "mail" (chrome "https://mail.google.com/mail/u/1/#inbox") (name ~=? "mail.google.com__mail") doRightFloat
   , NS "fly_terminal" "urxvtc -T fly_terminal -e tmux new-session -A -s main"  (title =? "fly_terminal") doTopFloat
-  , NS "firefox" "firefox"  (name ~=? "Navigator") doRightFloat
   , NS "authy" "authy"  (name ~=? "authy desktop") doTopRightFloat
-  , NS "chrome" "google-chrome-stable"  (name ~=? "google-chrome") doRightFloat
+  , NS "chrome" "chromium"  (name ~=? "chromium") doRightFloat
   ]
   where
     urxvt prog = ("urxvtc -T "++) . ((++) . head $ words prog) . (" -e "++) . (prog++) $ ""
@@ -369,7 +366,7 @@ scratchpads =
     name :: Query String
     name = stringProperty "WM_CLASS"
 
-    chrome url = "google-chrome-stable --app=" ++ url
+    chrome url = "chromium --app=" ++ url
 
     doSPFloat = customFloating $ W.RationalRect (1/6) (1/6) (4/6) (4/6)
     doTopFloat = customFloating $ W.RationalRect 0 (1/40) 1 (5/6)
@@ -447,6 +444,7 @@ myManageHook = composeAll $ concat [
     , [matchAny v --> doShift "media" | v <- myMedia]
     , [matchAny v --> doShift "gimp" | v <- myGimp]
     , [matchAny v --> doShift "vbox" | v <- myVBox]
+    , [matchAny v --> doShift "swap" | v <- mySwap]
     , [matchAny v --> doShift "shell" | v <- myShell]
     -- IntelliJ idea Tweaks
     -- Manage idea completion window
@@ -460,7 +458,9 @@ myManageHook = composeAll $ concat [
         ("info", "calendar.google.com"),
         ("info", "reagroup.atlassian.net"),
         ("info", "outlook.office.com"),
-        ("mail", "mail.google.com")
+        ("info", "dida365.com"),
+        ("mail", "mail.google.com"),
+        ("chat", "wx.qq.com")
       ]
     myCenterFloats = ["Sysinfo", "XMessage", "Smplayer"
                       ,"MPlayer", "nemo", "Thunar"
@@ -475,15 +475,15 @@ myManageHook = composeAll $ concat [
                 "desktop","desktop_window","notify-osd","stalonetray","trayer", "Xfce4-notifyd"]
 
     -- myWorkspaces = ["web", "editor", "ide", "info", "mail", "vbox", "media", "gimp", "swap", "shell"]
-    myWeb = ["Firefox-bin", "Firefox",  "Firefox Web Browser"
-              , "opera", "Opera", "Chromium"]
+    myWeb = ["Firefox-bin", "Firefox",  "Firefox Web Browser", "opera", "Opera", "firefox"]
     myInfo = ["Pidgin Internet Messenger", "Buddy List"
                , "skype", "skype-wrapper", "Skype",
                "Conky", "Station"]
     myEditor = ["geany", "Gvim", "emacs",
               "eclipse", "Eclipse", "jetbrains-idea-ce",
              "jetbrains-idea", "Aptana Studio 3"]
-    myChat = ["zoom"]
+    myChat = ["wxwork.exe"]
+    mySwap = ["zoom", "forticlient"]
     myGimp = ["Gimp", "GIMP Image Editor"]
     myMail = ["Mailspring"]
     myMedia = ["Rhythmbox","Spotify","Boxee","Trine"]

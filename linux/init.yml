@@ -4,7 +4,7 @@
   connection: local
   tasks:
     - name: install base packages
-      aur:
+      kewlfft.aur.aur:
         use: yay
         name:
           - ack
@@ -26,6 +26,7 @@
           - xmonad-contrib
           - google-chrome
           - z
+          - coursier
           - picom
           - fcitx
           - fcitx-configtool
@@ -44,8 +45,11 @@
           - wqy-microhei-lite
           - nerd-fonts-dejavu-complete
           - global
+          - docker
+          - chromium
           - deepin-screenshot
           - v2ray
+          - gopass
           - qv2ray-static-bin-nightly
           - franz-bin
           - authy

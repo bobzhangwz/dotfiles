@@ -276,7 +276,7 @@ It should only modify the values of Spacemacs settings."
    ;;                             :width normal
    ;;                             :powerline-scale 1.1)
    dotspacemacs-default-font '("monofur for Powerline"
-                               :size 20
+                               :size 28
                                :weight normal
                                :width normal
                                :powerline-scale 1.4)

@@ -11,7 +11,6 @@ asdf install scala 2.13.3
 asdf install yarn latest
 asdf global yarn latest
 
-bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
 asdf install nodejs lts
 asdf global nodejs lts
 npm install -g eslint-cli
@@ -21,10 +20,9 @@ npm i -g bash-language-server \
   javascript-typescript-langserver \
   purescript-language-server \
   vue-language-server \
+  typescript-language-server \
   vscode-css-languageserver-bin \
   neovim
-
-brew install coursier/formulas/coursier
 
 coursier bootstrap \
   --java-opt -Xss4m \

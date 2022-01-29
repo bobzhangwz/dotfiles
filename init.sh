@@ -16,8 +16,7 @@ fi
 if [[ $PLATFORM == 'linux' ]]; then
     sudo pacman -S stow ansible yay base-devel git --noconfirm
     yay --aururl "https://aur.tuna.tsinghua.edu.cn" --save
-
-    [[ ! -d ~/.ansible/plugins/modules/aur ]] && git clone https://github.com/kewlfft/ansible-aur.git ~/.ansible/plugins/modules/aur
+    ansible-galaxy collection install kewlfft.aur   
 fi
 
 stow . -t ~/ -d config/common
