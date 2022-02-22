@@ -54,6 +54,7 @@
           - qv2ray-static-bin-nightly
           - franz-bin
           - authy
+          - nutstore-experimental
 
     - name: clone powerline fonts
       git:
