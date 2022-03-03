@@ -3,7 +3,6 @@
         "*.wpy": "vue"
     },
     "javascript.implicitProjectConfig.experimentalDecorators": true,
-    "editor.fontFamily": "'monofur For Powerline', ' WenQuanYi Micro Hei Light', ' UbuntuMonoDerivativePowerline Nerd Font', 'Droid Sans Fallback'",
     "editor.tabSize": 2,
     "editor.renderWhitespace": "all",
     "terminal.external.linuxExec": "urxvtc",
@@ -11,7 +10,7 @@
     "[typescriptreact]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "editor.fontSize": 16,
+    "editor.fontSize": 17,
     "markdown.preview.fontSize": 15,
     "liveshare.anonymousGuestApproval": "reject",
     "liveshare.autoShareServers": false,
@@ -35,7 +34,16 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Visual Studio Dark",
     "editor.lineHeight": 1.3,
-    "editor.lineNumbers": "off"
+    "editor.lineNumbers": "off",
+    "java.import.gradle.java.home": "/usr/local/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home",
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/Users/zhpooer/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+    "sonarlint.ls.javaHome": "/usr/local/Cellar/openjdk@11/11.0.12/libexec/openjdk.jdk/Contents/Home",
+    "bracketPairColorizer.depreciation-notice": false,
+    "workbench.startupEditor": "none",
+    "editor.fontFamily": "'monofur For Powerline', ' WenQuanYi Micro Hei Light', ' UbuntuMonoDerivativePowerline Nerd Font', 'Droid Sans Fallback'",
+    "vim.enableNeovim": true,
+    "vim.foldfix": true,
+    "files.trimTrailingWhitespace": true
 }
