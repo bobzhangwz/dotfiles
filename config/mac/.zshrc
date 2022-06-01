@@ -68,7 +68,7 @@ plugins=(git asdf gh npm \
              mvn scala sbt tmux \
              node vagrant yarn fzf macos \
              gitignore vscode minikube aws kubectl spring \
-             docker docker-compose z sudo copyfile copydir tig \
+             docker docker-compose z sudo copyfile copypath tig \
              brew emoji)
 
 source $ZSH/oh-my-zsh.sh

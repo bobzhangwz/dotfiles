@@ -79,8 +79,12 @@ This function should only modify configuration layer settings."
      version-control
      gtags
      (plantuml :variables
-               puml-plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"
-               org-plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar")
+               plantuml-jar-path "/usr/local/Cellar/plantuml/1.2022.0/libexec/plantuml.jar"
+               org-plantuml-jar-path "/usr/local/Cellar/plantuml/1.2022.0/libexec/plantuml.jar"
+               plantuml-java-command "/usr/bin/java"
+               ;; puml-plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"
+               ;; org-plantuml-jar-path "/usr/share/java/plantuml/plantuml.jar"
+               )
      react
      multiple-cursors
      lsp
