@@ -294,7 +294,7 @@ searchBindings =
   [("C-; o s " ++ name, S.promptSearch myXPConfig e) | e@(S.SearchEngine name _) <- engines, length name == 1]
   where
     promptSearch (S.SearchEngine _ site) =
-      inputPrompt myXPConfig "Search" ?+ \s -> S.search "firefox" site s >> viewWeb
+      inputPrompt myXPConfig "Search" ?+ \s -> S.search "microsoft-edge-stable" site s >> viewWeb
     viewWeb = windows $ W.view "web"
     mk name site = S.intelligent $ S.searchEngine name site
     engines =
@@ -338,6 +338,7 @@ scratchpadsKeymaps = [
     ("M-a", namedScratchpadAction scratchpads "authy"),
     ("C-' w", namedScratchpadAction scratchpads "wechat"),
     ("C-' h", namedScratchpadAction scratchpads "htop"),
+    ("C-' p", namedScratchpadAction scratchpads "picgo"),
     ("C-' a", namedScratchpadAction scratchpads "alsamixer"),
     ("M-c", namedScratchpadAction scratchpads "calendar"),
     ("M-m", namedScratchpadAction scratchpads "mail"),
@@ -357,6 +358,7 @@ scratchpads =
   , NS "mail" (chrome "https://mail.google.com/mail/u/1/#inbox") (name ~=? "mail.google.com__mail") doRightFloat
   , NS "fly_terminal" "urxvtc -T fly_terminal -e tmux new-session -A -s main"  (title =? "fly_terminal") doTopFloat
   , NS "authy" "authy"  (name ~=? "authy desktop") doTopRightFloat
+  , NS "picgo" "picgo"  (name ~=? "picgo") doTopRightFloat
   , NS "chrome" "chromium"  (name ~=? "chromium") doRightFloat
   ]
   where
@@ -470,7 +472,7 @@ myManageHook = composeAll $ concat [
                       , "Downloads"
                       , "Save As...", "Dialog", "bashrun","Google Chrome Options"
                       , "Chromium Options", "Hangouts", "System Settings", "Library"
-                      , "Firefox Preference", "ss-qt5", "pop-up", "Xfce4-appfinder", "Xfrun4"]
+                      , "Firefox Preference", "ss-qt5", "pop-up", "Xfce4-appfinder", "Xfrun4", "scrcpy"]
     myIgnores = ["Unity-2d-panel", "Unity-2d-launcher", "desktop_window", "kdesktop", "Whisker Menu",
                 "desktop","desktop_window","notify-osd","stalonetray","trayer", "Xfce4-notifyd"]
 
@@ -482,7 +484,7 @@ myManageHook = composeAll $ concat [
     myEditor = ["geany", "Gvim", "emacs",
               "eclipse", "Eclipse", "jetbrains-idea-ce",
              "jetbrains-idea", "Aptana Studio 3"]
-    myChat = ["wxwork.exe"]
+    myChat = ["wxwork.exe", "scrcpy"]
     mySwap = ["zoom", "forticlient"]
     myGimp = ["Gimp", "GIMP Image Editor"]
     myMail = ["Mailspring"]

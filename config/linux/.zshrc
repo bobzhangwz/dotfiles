@@ -141,3 +141,9 @@ fi
 #   source /usr/share/zsh/manjaro-zsh-prompt
 # fi
 
+autoload -U +X compinit && compinit -i
+autoload -U +X bashcompinit && bashcompinit -i
+complete -o nospace -F /usr/bin/aliyun aliyun
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
