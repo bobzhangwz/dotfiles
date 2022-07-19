@@ -1,3 +1,4 @@
+{-# OPTIONS_GHC -Wno-deprecations #-}
 module Main where
 
 import Control.Monad
@@ -88,7 +89,7 @@ myNormalBorderColor  = "#dddddd"
 myFocusedBorderColor = "#ff0000"
 
 myXPConfig :: XPConfig
-myXPConfig = defaultXPConfig {
+myXPConfig = def {
     font                  = xftFont
     , bgColor               = colorDarkGray
     , fgColor               = colorGreen
@@ -125,6 +126,7 @@ myCommands = [
   , ("music163", spawn . chrome $ "https://music.163.com/#/my/m/music/playlist")
   , ("dingding", spawn . chrome $ "https://im.dingtalk.com/")
   , ("dida", spawn . chrome $ "https://dida365.com/webapp/")
+  , ("telegram", spawn . chrome $ "https://web.telegram.org/z")
   , ("terminal_cfw", spawn . withProxy $ myTerminal)
   ] where
      chrome url = "chromium --app=" ++ url
@@ -168,10 +170,10 @@ myKeys conf@XConfig {XMonad.modMask = modMask} =
     -- launch xfce4-launcher
   , ((modMask, xK_p), spawn "synapse -s")
     -- launch gmrun
- , ((modMask .|. shiftMask, xK_o), spawn "xfce4-appfinder")
+  , ((modMask .|. shiftMask, xK_o), spawn "xfce4-appfinder")
     -- Quit xmonad
     -- , ((modMask .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
-     , ((modMask .|. shiftMask, xK_q), spawn "xfce4-session-logout")
+  , ((modMask .|. shiftMask, xK_q), spawn "xfce4-session-logout")
 
     -- close focused window
   , ((modMask .|. shiftMask, xK_c), kill)
@@ -255,6 +257,7 @@ comboKeymap = [
     , ("C-; o o", spawnSelected def{gs_font = "xft:monofur for Powerline:size=14"} myGSCmd)
     , ("C-; o p", goToSelected myGSConfig)
     , ("C-; o q",  restart "xmonad" True)
+    , ("C-; o r",  spawn "xfce4-session-logout")
     , ("C-; o k", kill)
     , ("C-; o c", spawn "deepin-screenshot")
     -- , ("C-; o l", spawn "xflock4")
@@ -294,7 +297,7 @@ searchBindings =
   [("C-; o s " ++ name, S.promptSearch myXPConfig e) | e@(S.SearchEngine name _) <- engines, length name == 1]
   where
     promptSearch (S.SearchEngine _ site) =
-      inputPrompt myXPConfig "Search" ?+ \s -> S.search "microsoft-edge-stable" site s >> viewWeb
+      inputPrompt myXPConfig "Search" ?+ \s -> S.search "firefox" site s >> viewWeb
     viewWeb = windows $ W.view "web"
     mk name site = S.intelligent $ S.searchEngine name site
     engines =
@@ -556,5 +559,5 @@ main = xmonad myDefaultConfig
         , ppTitle = xmobarColor "#C9A34E" "" . shorten 32
         , ppSep = xmobarColor "#429942" "" " | "
       -- , ppOrder  = \(ws:l:t:exs) -> []++exs
-        , ppSort = fmap (namedScratchpadFilterOutWorkspace .) (ppSort byorgeyPP)
+        , ppSort = fmap ( namedScratchpadFilterOutWorkspace .) (ppSort byorgeyPP)
         }

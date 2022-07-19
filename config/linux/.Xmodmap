@@ -1,14 +1,13 @@
-remove Lock = Caps_Lock
-remove Control = Control_R
-remove Control = Control_L
+! remove Lock = Caps_Lock
+! remove Control = Control_R
+! remove Control = Control_L
+! keysym Control_R = Control_L
+! keysym Caps_Lock = Control_R
+! add Lock = Caps_Lock
+! add Control = Control_R
+! add Control = Control_L
+! add Lock = Menu
 
-keysym Control_R = Control_L
-keysym Caps_Lock = Control_R
-
-add Lock = Caps_Lock
-add Control = Control_R
-add Control = Control_L
-add Lock = Menu
 
 ! in arch vbox of mac
 ! clear mod1
@@ -21,3 +20,10 @@ add Lock = Menu
 ! add mod4 = Super_L Hyper_L Super_L  Super_R
 ! super: 133 207
 ! option: 64 205
+
+remove Lock = Caps_Lock
+remove Control = Control_R
+keysym Control_R = Caps_Lock
+keysym Caps_Lock = Control_R
+add Lock = Caps_Lock
+add Control = Control_R
