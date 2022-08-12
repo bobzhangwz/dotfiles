@@ -35,6 +35,15 @@
 [receive]
 	denyCurrentBranch = ignore
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = /Users/zhpooer/.gitignore_global
 [github]
 	user = bobzhangwz
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[merge]
+  tool = code
+[mergetool "code"]
+  cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED

@@ -11,13 +11,12 @@
 
     - name: install cask
       homebrew_cask:
-        package: 
+        package:
         - youdaodict
-        - google-backup-and-sync
         - spark
         - xmind
         - beyond-compare
-        - filezilla
+
 
     - name: install packages for fun
       homebrew:
