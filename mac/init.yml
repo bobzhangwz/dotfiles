@@ -78,11 +78,11 @@
         - visual-studio-code
         - zoom
         - vlc
-        - tecent-lemon
+        # - tecent-lemon
         - aria2gui
         - google-chrome
-        - jietu
-        - franz
+        # - jietu
+        # - franz
         - neteasemusic
         - authy
         - ticktick
@@ -92,7 +92,14 @@
         - 1password
         - intellij-idea
         - balenaetcher
-        - picgo
+        # - picgo
         - mark-text
+        - snipaste
+        - mockoon
+        - clipy
+        - lens
+        - yuque
+        - eul
+        - postman
 
 

@@ -113,6 +113,11 @@ alias emc="emacsclient -c"
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias tm="tmux attach"
+alias kg=kubectl get
+alias kgdep=kubectl get deployment
+alias ksys=kubectl --namespace=kube-system
+alias kd=kubectl describe
+alias bb=kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --command --
 
 export SBT_OPTS="-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=1024M"
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
