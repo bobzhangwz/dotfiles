@@ -82,9 +82,9 @@ URxvt.borderLess:False
 Xft.dpi:96
 ! URxvt.font:xft:monofur:size=11:style=Regular:antialias=true,xft: WenQuanYi Micro Hei Mono:size=14:style=Regular:antialias=true
 ! URxvt.boldfont:xft:monofur:size=11:style=bold:antialias=true,xft:WenQuanYi Micro Hei Mono:size=14:style=Bold:antialias=true
-URxvt.font:xft:Monofur\ for\ Powerline:size=14:style=Regular:antialias=true,xft:WenQuanYi Micro Hei Mono Light:size=12:style=Regular:antialias=true,xft:DejaVuSansMono Nerd Font Mono:pixelsize=16
-!! URxvt.font:xft:Monofur\ for\ Powerline:size=11:style=Regular:antialias=true,xft:WenQuanYi Micro Hei Mono Light:size=12:style=Regular:antialias=true,xft:Symbola 
-URxvt.boldfont:xft:Monofur\ Bold\ for\ Powerline:size=11:style=bold:antialias=true,xft:WenQuanYi Micro Hei Mono Light:size=12:style=Bold:antialias=true,xft:DejaVuSansMono Nerd Font Mono:pixelsize=16
+URxvt.font:xft:Monofur\ Nerd\ Font:size=14:style=Regular:antialias=true,xft:WenQuanYi Micro Hei Mono Light:size=12:style=Regular:antialias=true,xft:DejaVuSansMono Nerd Font Mono:pixelsize=16
+!! URxvt.font:xft:Monofur\ for\ Powerline:size=11:style=Regular:antialias=true,xft:WenQuanYi Micro Hei Mono Light:size=12:style=Regular:antialias=true,xft:Symbola
+URxvt.boldfont:xft:Monofur\ Nerd\ Font:size=11:style=bold:antialias=true,xft:WenQuanYi Micro Hei Mono Light:size=12:style=Bold:antialias=true,xft:DejaVuSansMono Nerd Font Mono:pixelsize=16
 ! URxvt.termName: rxvt-256color
 URxvt.termName: rxvt-unicode-256color
 ! URxvt.termName: xterm-256color

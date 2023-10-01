@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -39,6 +37,7 @@ POWERLINE_NO_BLANK_LINE="true"
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
+
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
@@ -68,12 +67,13 @@ POWERLINE_NO_BLANK_LINE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git asdf gh npm \
              mvn scala sbt tmux \
-             node vagrant yarn fzf macos \
+             node vagrant yarn fzf macos z \
              gitignore vscode minikube aws kubectl spring \
-             docker docker-compose z sudo copyfile copypath tig \
-             brew emoji)
+             docker docker-compose sudo copyfile copypath tig \
+             brew emoji zsh-interactive-cd fancy-ctrl-z dotenv)
 
 source $ZSH/oh-my-zsh.sh
+
 
 # User configuration
 
@@ -111,6 +111,7 @@ unsetopt beep                   # no bell on error
 alias em="emacsclient -t"
 alias emc="emacsclient -c"
 alias grep='grep --color=auto'
+alias ls='exa'
 alias vim='nvim'
 alias tm="tmux attach"
 alias kg=kubectl get
@@ -121,10 +122,11 @@ alias bb=kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --com
 
 export SBT_OPTS="-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=1024M"
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
+export DISABLE_FZF_AUTO_COMPLETION=false
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 source <(kubectl completion zsh)
-export PATH="/usr/local/opt/mysql-client/bin:$PATH:$HOME/usr/bin"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/opt/mysql-client/bin:$PATH:$HOME/usr/bin"
 
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
+# eval "$(zoxide init zsh)"

@@ -32,13 +32,13 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(systemd
-     systemd
      python
      vimscript
      rust
      ansible
      csv
      neotree
+     (xclipboard :variables xclipboard-enable-cliphist t)
      (javascript :variables
                  js2-basic-offset 2
                  js-indent-level 2
@@ -298,7 +298,7 @@ It should only modify the values of Spacemacs settings."
    ;;                             :weight normal
    ;;                             :width normal
    ;;                             :powerline-scale 1.1)
-   dotspacemacs-default-font '("monofur for Powerline"
+   dotspacemacs-default-font '("Monofur Nerd Font"
                                :size 22
                                :weight normal
                                :width normal
@@ -405,8 +405,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-maximized-at-startup nil
 
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
-   ;; variable with `dotspacemacs-maximized-at-startup' in OSX to obtain
-   ;; borderless fullscreen. (default nil)
+   ;; variable with `dotspacemacs-maximized-at-startup' to obtain fullscreen
+   ;; without external boxes. Also disables the internal border. (default nil)
    dotspacemacs-undecorated-at-startup nil
 
    ;; A value from the range (0..100), in increasing opacity, which describes
@@ -620,28 +620,28 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  (use-package org-brain :ensure t
-    :init
-    (setq org-brain-path "~/notes/brain")
-    ;; For Evil users
-    (with-eval-after-load 'evil
-      (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
-    :config
-    (bind-key "C-c b" 'org-brain-prefix-map org-mode-map)
-    (setq neo-theme 'arrow
-          neo-vc-integration '(char))
-    (setq org-id-track-globally t)
-    (setq org-brain-refile-max-level 9)
-    (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
-    (add-hook 'before-save-hook #'org-brain-ensure-ids-in-buffer)
-    ;; (push '("b" "Brain" plain (function org-brain-goto-end)
-    ;;         "* %i%?" :empty-lines 1)
-    ;;       org-capture-templates)
-    (setq org-brain-visualize-default-choices 'all)
-    (setq org-brain-title-max-length 12)
-    (setq org-brain-include-file-entries t
-          org-brain-file-entries-use-title t)
-    )
+  ;; (use-package org-brain :ensure t
+  ;;   :init
+  ;;   (setq org-brain-path "~/notes/brain")
+  ;;   ;; For Evil users
+  ;;   (with-eval-after-load 'evil
+  ;;     (evil-set-initial-state 'org-brain-visualize-mode 'emacs))
+  ;;   :config
+  ;;   (bind-key "C-c b" 'org-brain-prefix-map org-mode-map)
+  ;;   (setq neo-theme 'arrow
+  ;;         neo-vc-integration '(char))
+  ;;   (setq org-id-track-globally t)
+  ;;   (setq org-brain-refile-max-level 9)
+  ;;   (setq org-id-locations-file "~/.emacs.d/.org-id-locations")
+  ;;   (add-hook 'before-save-hook #'org-brain-ensure-ids-in-buffer)
+  ;;   ;; (push '("b" "Brain" plain (function org-brain-goto-end)
+  ;;   ;;         "* %i%?" :empty-lines 1)
+  ;;   ;;       org-capture-templates)
+  ;;   (setq org-brain-visualize-default-choices 'all)
+  ;;   (setq org-brain-title-max-length 12)
+  ;;   (setq org-brain-include-file-entries t
+  ;;         org-brain-file-entries-use-title t)
+  ;;   )
 
   ;; ;; Allows you to edit entries directly from org-brain-visualize
   ;; (use-package polymode
@@ -649,16 +649,15 @@ you should place your code here."
   ;;   (add-hook 'org-brain-visualize-mode-hook #'org-brain-polymode)
   ;;   )
   (push "~/.spacemacs.d/personal/" load-path)
-  (use-package init-org)
+  ;; (use-package init-org)
   (use-package helloworld)
-
 
   (global-set-key (kbd "C-v") (lambda () (interactive) (forward-line 10)))
   (global-set-key (kbd "M-v") (lambda () (interactive) (forward-line -10)))
   (setq powerline-default-separator 'slant)
   ;; (spacemacs/toggle-indent-guide-globally-on)
 
-  (setq dotspacemacs-mode-line-unicode-symbols nil)
+  (setq dotspacemacs-mode-line-unicode-symbols t)
 
   (setq c-basic-offset 2)
   ;; web development
@@ -679,10 +678,11 @@ you should place your code here."
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
+  (transient-mark-mode 1)
 
-  (spacemacs//set-monospaced-font "monofur for Powerline" "WenQuanYi Micro Hei Mono" 22 22)
-  (set-face-font 'variable-pitch "Space Mono for Powerline")
-  (copy-face 'variable-pitch 'fixed-pitch)
+  (spacemacs//set-monospaced-font "Monofur Nerd Font" "WenQuanYi Micro Hei Mono" 22 22)
+  ;; (set-face-font 'variable-pitch "Space Mono for Powerline")
+  ;; (copy-face 'variable-pitch 'fixed-pitch)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

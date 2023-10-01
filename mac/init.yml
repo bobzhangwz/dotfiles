@@ -3,6 +3,9 @@
 - hosts: localhost
   connection: local
   tasks:
+    - name: tap
+      shell: brew tap homebrew/cask-fonts
+
     - name: install base packages
       homebrew:
         package:
@@ -19,6 +22,7 @@
         - watch
         - wget
         - zsh
+        - zsh-completions
         - ispell
         - fzf
         - z
@@ -30,8 +34,8 @@
         - docker
         - docker-compose
         - graphviz
-        - colima
-        - coursier/formulas/coursier
+        # - colima
+        # - coursier/formulas/coursier
 
     - name: install cask
       homebrew_cask:
@@ -39,7 +43,10 @@
         - emacs
         - the-unarchiver
         - wechat
-        - amethyst
+        - font-monofur-nerd-font
+        - koekeishiya/formulae/skhd
+        - koekeishiya/formulae/yabai
+        # - amethyst
 
     - name: install spacemacs
       git:
@@ -80,26 +87,32 @@
         - vlc
         # - tecent-lemon
         - aria2gui
-        - google-chrome
+        # - google-chrome
         # - jietu
         # - franz
         - neteasemusic
-        - authy
+        # - authy
         - ticktick
         - clashx
-        - termius
+        # - termius
         - youdaodict
         - 1password
         - intellij-idea
-        - balenaetcher
+        # - balenaetcher
         # - picgo
-        - mark-text
+        # - mark-text
         - snipaste
-        - mockoon
+        # - mockoon
         - clipy
         - lens
         - yuque
         - eul
-        - postman
+        - raycast
+        - microsoft-edge
+        - logseq
+        - k9s
+        - zoxide
+        # - yazi
+        # - postman
 
-
+# compaudit | xargs chown -R "$(whoami)"
