@@ -16,3 +16,7 @@ project/metals.sbt
 .vscode
 project/project
 out/
+bin/
+.tool-versions
+.bsp/
+target/

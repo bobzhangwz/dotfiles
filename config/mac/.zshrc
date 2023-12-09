@@ -70,7 +70,7 @@ plugins=(git asdf gh npm \
              node vagrant yarn fzf macos z \
              gitignore vscode minikube aws kubectl spring \
              docker docker-compose sudo copyfile copypath tig \
-             brew emoji zsh-interactive-cd fancy-ctrl-z dotenv)
+             brew emoji zsh-interactive-cd fancy-ctrl-z dotenv direnv 1password)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,11 +83,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 unsetopt list_beep              # no bell on ambiguous completion
 unsetopt hist_beep              # no bell on error in histor

@@ -34,6 +34,8 @@
         - docker
         - docker-compose
         - graphviz
+        - direnv
+        - devbox
         # - colima
         # - coursier/formulas/coursier
 
@@ -112,7 +114,7 @@
         - logseq
         - k9s
         - zoxide
-        # - yazi
+        - yazi
         # - postman
 
 # compaudit | xargs chown -R "$(whoami)"
