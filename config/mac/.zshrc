@@ -125,8 +125,23 @@ export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
 export DISABLE_FZF_AUTO_COMPLETION=false
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 source <(kubectl completion zsh)
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/opt/mysql-client/bin:$PATH:$HOME/usr/bin"
+eval "$(starship init zsh)"
+_fzf_comprun() {
+  local command=$1
+  shift
 
-# eval "$(zoxide init zsh)"
+  case "$command" in
+    cd)           fzf "$@" --preview 'tree -C {} | head -200' ;;
+    ls)          fzf "$@" --preview 'bat --style=numbers --color=always --line-range :500 {}' ;;
+    *)            fzf "$@" ;;
+  esac
+}
+
+eval "$(zoxide init zsh)"
+
+export DIRENV_LOG_FORMAT=''
+
