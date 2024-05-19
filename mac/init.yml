@@ -25,7 +25,6 @@
         - zsh-completions
         - ispell
         - fzf
-        - z
         - kubectl
         - asdf
         - gpg
@@ -36,6 +35,7 @@
         - graphviz
         - direnv
         - devbox
+        - bat
         # - colima
         # - coursier/formulas/coursier
 
@@ -107,7 +107,7 @@
         # - mockoon
         - clipy
         - lens
-        - yuque
+        # - yuque
         - eul
         - raycast
         - microsoft-edge

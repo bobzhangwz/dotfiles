@@ -7,6 +7,10 @@ function! myspacevim#before() abort
   let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-html', 'coc-prettier', 'coc-eslint', 'coc-tsserver']
   let g:better_whitespace_enabled=1
   let g:strip_whitespace_on_save=1
+
+  " let profile = SpaceVim#mapping#search#getprofile('rg')
+  " let default_opt = profile.default_opts + ['--no-ignore-vcs']
+  " call SpaceVim#mapping#search#profile({'rg' : {'default_opts' : default_opt}})
 endfunction
 
 function! myspacevim#after() abort

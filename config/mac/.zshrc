@@ -67,7 +67,7 @@ POWERLINE_NO_BLANK_LINE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git asdf gh npm \
              mvn scala sbt tmux \
-             node vagrant yarn fzf macos z \
+             node vagrant yarn fzf macos \
              gitignore vscode minikube aws kubectl spring \
              docker docker-compose sudo copyfile copypath tig \
              brew emoji zsh-interactive-cd fancy-ctrl-z dotenv direnv 1password)
