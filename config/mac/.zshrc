@@ -111,7 +111,7 @@ unsetopt beep                   # no bell on error
 alias em="emacsclient -t"
 alias emc="emacsclient -c"
 alias grep='grep --color=auto'
-alias ls='exa'
+# alias ls='exa'
 alias vim='nvim'
 alias tm="tmux attach"
 alias kg=kubectl get
@@ -136,7 +136,7 @@ _fzf_comprun() {
 
   case "$command" in
     cd)           fzf "$@" --preview 'tree -C {} | head -200' ;;
-    ls)          fzf "$@" --preview 'bat --style=numbers --color=always --line-range :500 {}' ;;
+    cat)          fzf "$@" --preview 'bat --style=numbers --color=always --line-range :500 {}' ;;
     *)            fzf "$@" ;;
   esac
 }
