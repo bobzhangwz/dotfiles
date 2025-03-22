@@ -144,4 +144,5 @@ _fzf_comprun() {
 eval "$(zoxide init zsh)"
 
 export DIRENV_LOG_FORMAT=''
+eval "$(devbox global shellenv --init-hook)"
 

@@ -3,8 +3,6 @@
 - hosts: localhost
   connection: local
   tasks:
-    - name: tap
-      shell: brew tap homebrew/cask-fonts
 
     - name: install base packages
       homebrew:
@@ -28,16 +26,19 @@
         - kubectl
         - asdf
         - gpg
-        - tldr
+#        - tldr
         - neovim
-        - docker
+       # - docker
         - docker-compose
-        - graphviz
+#        - graphviz
         - direnv
         - devbox
         - bat
         # - colima
         # - coursier/formulas/coursier
+        - FelixKratz/formulae/borders
+        - koekeishiya/formulae/skhd
+        - koekeishiya/formulae/yabai
 
     - name: install cask
       homebrew_cask:
@@ -46,8 +47,6 @@
         - the-unarchiver
         - wechat
         - font-monofur-nerd-font
-        - koekeishiya/formulae/skhd
-        - koekeishiya/formulae/yabai
         # - amethyst
 
     - name: install spacemacs
@@ -64,14 +63,14 @@
     - name: install spacevim
       shell: sh /tmp/install_spacevim.sh
 
-    - name: clone powerline fonts
-      git:
-        repo: https://github.com/powerline/fonts.git
-        depth: 1
-        dest: /tmp/fonts
-
-    - name: install powerline fonts
-      shell: bash /tmp/fonts/install.sh
+    # - name: clone powerline fonts
+      # git:
+        # repo: https://github.com/powerline/fonts.git
+        # depth: 1
+        # dest: /tmp/fonts
+#
+    # - name: install powerline fonts
+      # shell: bash /tmp/fonts/install.sh
 
     - name: install tpm
       git:
@@ -84,33 +83,33 @@
         - gas-mask
         - hiddenbar
         - wechatwork
-        - visual-studio-code
-        - zoom
+#        - visual-studio-code
+       # - zoom
         - vlc
         # - tecent-lemon
-        - aria2gui
+#        - aria2gui
         # - google-chrome
         # - jietu
         # - franz
         - neteasemusic
         # - authy
         - ticktick
-        - clashx
+#        - clashx
         # - termius
         - youdaodict
-        - 1password
-        - intellij-idea
+#        - 1password
+#        - intellij-idea
         # - balenaetcher
         # - picgo
         # - mark-text
         - snipaste
         # - mockoon
         - clipy
-        - lens
+#        - lens
         # - yuque
-        - eul
-        - raycast
-        - microsoft-edge
+#        - eul
+#        - raycast
+#       - microsoft-edge
         - logseq
         - k9s
         - zoxide

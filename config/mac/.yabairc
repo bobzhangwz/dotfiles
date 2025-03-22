@@ -2,54 +2,61 @@
 yabai -m config layout bsp
 
 # new window spawns to the right if vertical split, or bottom if horizontal split
-yabai -m config window_placement second_child
-
-# padding set to 11px
-yabai -m config top_padding 6
-yabai -m config bottom_padding 6
-yabai -m config left_padding 6
-yabai -m config right_padding 6
-yabai -m config window_gap 6
 
 # -- mouse settings --
 
 # modifier for clicking and dragging with mouse
 yabai -m config mouse_modifier cmd
 # set modifier + left-click drag to move window
-# yabai -m config mouse_action1 move
-# set modifier + right-click drag to resize window
-yabai -m config mouse_action2 resize
 
 # when window is dropped in center of another window, swap them (on edges it will split it)
-yabai -m mouse_drop_action swap
 
-# floating windows are always on top (default: off)
-yabai -m config window_topmost on
 
-# modify window shadows (default: on, options: on, off, float)
 # example: show shadows only for floating windows
 yabai -m config window_shadow float
 
-yabai -m config mouse_follows_focus off \
-                focus_follows_mouse          off \
-                active_window_border_color   0xffe28743 \
-                normal_window_border_color   0x000000ff \
-    window_border_width          4              \
-    window_border_radius         12             \
-    window_border_blur           off            \
-    window_border_hidpi          on             \
-    window_border                on
-
+yabai -m config external_bar               all:30:0     \
+                window_border              on           \
+                mouse_follows_focus        off          \
+                focus_follows_mouse        off          \
+                window_zoom_persist        off          \
+                window_placement           second_child \
+                window_topmost             on           \
+                window_shadow              float        \
+                window_opacity             on           \
+                window_opacity_duration    0.15         \
+                active_window_opacity      1.0          \
+                normal_window_opacity      0.95         \
+                window_border_width        2            \
+                window_border_hidpi        off          \
+                window_border_radius       11           \
+                window_animation_duration  0.22         \
+                active_window_border_color 0xffe1e3e4   \
+                normal_window_border_color 0xff2a2f38   \
+                insert_feedback_color      0xff9dd274   \
+                split_ratio                0.50         \
+                auto_balance               off          \
+                mouse_modifier             fn           \
+                mouse_action1              move         \
+                mouse_action2              resize       \
+                mouse_drop_action          swap         \
+                top_padding                8            \
+                bottom_padding             8            \
+                left_padding               8            \
+                right_padding              8            \
+                window_gap                 8
 # window opacity (default: off)
-# example: render all unfocused windows with 90% opacity
-yabai -m config window_opacity on
-yabai -m config active_window_opacity 1
-yabai -m config normal_window_opacity 1
 
-
+borders active_color=0xffffb570 inactive_color=0xff494d64 width=7.0 &
 # disable specific apps
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^1Password$" manage=off
+yabai -m rule --add app="^网易有道翻译$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Cisco Secure Client$" manage=off
+yabai -m rule --add app="^Xiaomi Interconnectivity Services$" manage=off
+yabai -m rule --add title="^.*Setting.*$" manage=off

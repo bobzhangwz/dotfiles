@@ -21,8 +21,10 @@ fi
 
 stow . -t ~/ -d config/common
 stow . -t ~/ -d config/${PLATFORM}
+stow . -t ~/.config -d config/config/
 
-ansible-playbook ${SOURCE_DIR}/${PLATFORM}/init.yml
+ansible-playbook ${SOURCE_DIR}/${PLATFORM}/init.yml -v
 
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+curl -L https://raw.githubusercontent.com/FelixKratz/dotfiles/master/install_sketchybar.sh | sh
 
