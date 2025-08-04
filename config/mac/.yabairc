@@ -50,10 +50,12 @@ yabai -m config external_bar               all:30:0     \
 borders active_color=0xffffb570 inactive_color=0xff494d64 width=7.0 &
 # disable specific apps
 yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^VLC$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^网易有道翻译$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
