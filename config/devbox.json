@@ -6,7 +6,10 @@
     "awscli2@latest",
     "git@latest",
     "terraform@latest",
-    "buildkite-cli@latest"
+    "buildkite-cli@latest",
+    "fd@latest",
+    "ripgrep@latest",
+    "uv@latest"
   ],
   "shell": {
     "init_hook": [

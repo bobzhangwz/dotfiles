@@ -129,6 +129,7 @@ export DISABLE_FZF_AUTO_COMPLETION=false
 if [ -e ~/.nix-profile/etc/profile.d/nix.sh ]; then . ~/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 source <(kubectl completion zsh)
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:/usr/local/opt/mysql-client/bin:$PATH:$HOME/usr/bin"
+export PATH=/Users/bozhang/.local/bin:$PATH
 eval "$(starship init zsh)"
 _fzf_comprun() {
   local command=$1
@@ -146,3 +147,5 @@ eval "$(zoxide init zsh)"
 export DIRENV_LOG_FORMAT=''
 eval "$(devbox global shellenv --init-hook)"
 
+# OpenClaw Completion
+source "/Users/bozhang/.openclaw/completions/openclaw.zsh"

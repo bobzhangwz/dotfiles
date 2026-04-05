@@ -32,7 +32,7 @@
         - docker-compose
 #        - graphviz
         - direnv
-        - devbox
+        # - devbox
         - bat
         # - colima
         # - coursier/formulas/coursier
@@ -97,8 +97,8 @@
 #        - clashx
         # - termius
         - youdaodict
-#        - 1password
-#        - intellij-idea
+        - 1password
+        - intellij-idea
         # - balenaetcher
         # - picgo
         # - mark-text
@@ -111,9 +111,15 @@
 #        - raycast
 #       - microsoft-edge
         - logseq
-        - k9s
-        - zoxide
-        - yazi
+
+# curl -L https://raw.githubusercontent.com/FelixKratz/dotfiles/master/install_sketchybar.sh | sh
+        - FelixKratz/formulae/borders
+        - koekeishiya/formulae/skhd
+        - koekeishiya/formulae/yabai
+        - FelixKratz/formulae/sketchybar
+#        - k9s
+#        - zoxide
+#        - yazi
         # - postman
 
 # compaudit | xargs chown -R "$(whoami)"

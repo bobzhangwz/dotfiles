@@ -56,8 +56,11 @@ yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^iTerm.*$" manage=off
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^网易有道翻译$" manage=off
+yabai -m rule --add app="^金山词霸$" manage=off
+yabai -m rule --add app="^Dictionary$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Cisco Secure Client$" manage=off
 yabai -m rule --add app="^Xiaomi Interconnectivity Services$" manage=off

@@ -22,6 +22,8 @@ fi
 stow . -t ~/ -d config/common
 stow . -t ~/ -d config/${PLATFORM}
 stow . -t ~/.config -d config/config/
+mkdir -p ~/.local/share/devbox/global/default
+ln -s $(pwd)/config/devbox.json  ~/.local/share/devbox/global/default/devbox.json
 
 ansible-playbook ${SOURCE_DIR}/${PLATFORM}/init.yml -v
 
