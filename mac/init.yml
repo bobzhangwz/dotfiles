@@ -39,6 +39,8 @@
         - FelixKratz/formulae/borders
         - koekeishiya/formulae/skhd
         - koekeishiya/formulae/yabai
+        - opencode
+        - codex
 
     - name: install cask
       homebrew_cask:
@@ -47,6 +49,7 @@
         - the-unarchiver
         - wechat
         - font-monofur-nerd-font
+        - railwaycat/emacsmacport/emacs-mac-spacemacs-icon
         # - amethyst
 
     - name: install spacemacs
@@ -54,14 +57,14 @@
         repo: https://github.com/syl20bnr/spacemacs
         dest: ~/.emacs.d
 
-    - name: Download spacevim
-      get_url:
-        url: https://spacevim.org/install.sh
-        dest: /tmp/install_spacevim.sh
-        mode: +x
+    # - name: Download spacevim
+    #   get_url:
+    #     url: https://spacevim.org/install.sh
+    #     dest: /tmp/install_spacevim.sh
+    #     mode: +x
 
-    - name: install spacevim
-      shell: sh /tmp/install_spacevim.sh
+    # - name: install spacevim
+    #   shell: sh /tmp/install_spacevim.sh
 
     # - name: clone powerline fonts
       # git:

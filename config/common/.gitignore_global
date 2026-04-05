@@ -13,10 +13,11 @@ GTAGS
 .bloop/
 project/metals.sbt
 .tool-versions
-.vscode
 project/project
 out/
-bin/
+/bin/
 .tool-versions
 .bsp/
 target/
+.npmrc
+.devbox/
