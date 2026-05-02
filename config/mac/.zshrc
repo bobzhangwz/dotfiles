@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='nvim'
+  export EDITOR='lvim'
 fi
 
 unsetopt list_beep              # no bell on ambiguous completion
@@ -112,8 +112,10 @@ alias em="emacsclient -t"
 alias emc="emacsclient -c"
 alias grep='grep --color=auto'
 # alias ls='exa'
-alias vim='nvim'
+alias vim='lvim'
+alias kkk='vim $(fzf --preview="bat --color=always {}")'
 alias tm="tmux attach"
+alias cc="claude --dangerously-skip-permissions"
 alias kg=kubectl get
 alias kgdep=kubectl get deployment
 alias ksys=kubectl --namespace=kube-system
@@ -145,6 +147,7 @@ _fzf_comprun() {
 eval "$(zoxide init zsh)"
 
 export DIRENV_LOG_FORMAT=''
+export ZSH_DOTENV_PROMPT=false
 eval "$(devbox global shellenv --init-hook)"
 
 # OpenClaw Completion
