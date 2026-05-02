@@ -1,6 +1,6 @@
 [user]
-	name = BO ZHANG
-	email = bozhang@thoughtworks.com
+	name = bozhang-m
+	email = bo.zhang@myob.com
 [push]
 	default = simple
 [color]
@@ -36,7 +36,7 @@
 [receive]
 	denyCurrentBranch = ignore
 [core]
-	excludesfile = /Users/zhpooer/.gitignore_global
+	excludesfile = /Users/Bo.Zhang/.gitignore_global
 [github]
 	user = bobzhangwz
 [merge]
@@ -45,7 +45,7 @@
   cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

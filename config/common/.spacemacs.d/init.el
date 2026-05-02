@@ -90,6 +90,9 @@ This function should only modify configuration layer settings."
      react
      multiple-cursors
      lsp
+     ; (osx :variables osx-command-as       'hyper
+                   ; osx-option-as        'meta
+                   ; osx-control-as       'control)
      (scala :variables scala-backend 'scala-metals
             scala-enable-eldoc nil)
      ghost-text
@@ -680,6 +683,7 @@ you should place your code here."
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
   (transient-mark-mode 1)
+  (menu-bar-mode 1)
 
   (spacemacs//set-monospaced-font "Monofur Nerd Font" "WenQuanYi Micro Hei Mono" 22 22)
   ;; (set-face-font 'variable-pitch "Space Mono for Powerline")
