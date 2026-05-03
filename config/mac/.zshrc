@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='lvim'
+  export EDITOR='hx'
 fi
 
 unsetopt list_beep              # no bell on ambiguous completion
@@ -112,8 +112,8 @@ alias em="emacsclient -t"
 alias emc="emacsclient -c"
 alias grep='grep --color=auto'
 # alias ls='exa'
-alias vim='lvim'
-alias kkk='vim $(fzf --preview="bat --color=always {}")'
+alias vim='hx'
+alias kkk='hx $(fzf --preview="bat --color=always {}")'
 alias tm="tmux attach"
 alias cc="claude --dangerously-skip-permissions"
 alias kg=kubectl get
