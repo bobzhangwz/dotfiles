@@ -37,7 +37,6 @@ POWERLINE_NO_BLANK_LINE="true"
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
@@ -73,7 +72,6 @@ plugins=(git asdf gh npm \
              brew emoji zsh-interactive-cd fancy-ctrl-z dotenv direnv 1password)
 
 source $ZSH/oh-my-zsh.sh
-
 
 # User configuration
 
@@ -121,6 +119,7 @@ alias kgdep=kubectl get deployment
 alias ksys=kubectl --namespace=kube-system
 alias kd=kubectl describe
 alias bb=kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --command --
+unalias gsd
 
 export SBT_OPTS="-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=1024M"
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'
@@ -151,4 +150,4 @@ export ZSH_DOTENV_PROMPT=false
 eval "$(devbox global shellenv --init-hook)"
 
 # OpenClaw Completion
-source "/Users/bozhang/.openclaw/completions/openclaw.zsh"
+# source "/Users/bozhang/.openclaw/completions/openclaw.zsh"
