@@ -119,6 +119,7 @@ alias kgdep=kubectl get deployment
 alias ksys=kubectl --namespace=kube-system
 alias kd=kubectl describe
 alias bb=kubectl run busybox --image=busybox:1.28 --rm -it --restart=Never --command --
+alias typora="open -a typora"
 unalias gsd
 
 export SBT_OPTS="-Xms512M -Xmx1024M -Xss2M -XX:MaxMetaspaceSize=1024M"
@@ -149,5 +150,30 @@ export DIRENV_LOG_FORMAT=''
 export ZSH_DOTENV_PROMPT=false
 eval "$(devbox global shellenv --init-hook)"
 
-# OpenClaw Completion
-# source "/Users/bozhang/.openclaw/completions/openclaw.zsh"
+# ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+# export PATH="/Users/Bo.Zhang/.rd/bin:$PATH"
+# ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/Bo.Zhang/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+function aws () {
+        case $1 in
+                (profiles) command aws --no-cli-pager configure list-profiles ;;
+                (authinfo) command aws --no-cli-pager sts get-caller-identity  ;;
+                (who | whoami) command aws --no-cli-pager sts get-caller-identity --query "Arn" --output text ;;
+                (use) export AWS_PROFILE=$2 ;;
+                (login) command aws sso login --profile $2
+                    export AWS_PROFILE=$2
+                    aws sts get-caller-identity --no-cli-pager ;;
+                (*) command aws "$@" ;;
+        esac
+}
+export PATH=~/.local/bin:$PATH
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+eval "$(direnv hook zsh)"
+
+export DIRENV_LOG_FORMAT=''
+export PATH="$HOME/.local/bin:$PATH"
+unalias gsd
