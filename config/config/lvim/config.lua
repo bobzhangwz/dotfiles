@@ -10,10 +10,29 @@ lvim.builtin.telescope.extensions = {
     override_generic_sorter = true,
     override_file_sorter = true,
     case_mode = "smart_case",
-  },
+  }
 }
 
+-- lvim.builtin.telescope.active = false
+
 lvim.plugins = {
+   {
+    "lukas-reineke/indent-blankline.nvim",
+    enabled = false,
+  },
+  {
+    "camspiers/snap",
+    config = function()
+      local snap = require "snap"
+      local layout = snap.get("layout").bottom
+      local file = snap.config.file:with { consumer = "fzf", layout = layout }
+      local vimgrep = snap.config.vimgrep:with { layout = layout }
+      snap.register.command("find_files", file { producer = "ripgrep.file" })
+      snap.register.command("buffers", file { producer = "vim.buffer" })
+      snap.register.command("oldfiles", file { producer = "vim.oldfile" })
+      snap.register.command("live_grep", vimgrep {})
+    end,
+  },
   {
     "yetone/avante.nvim",
     build = vim.fn.has("win32") ~= 0
@@ -182,8 +201,8 @@ lvim.plugins = {
     config = function()
       require("Jumppack").setup({
         mappings = {
-           jump_back = '<C-_>',
-           jump_forward = '<C-i>',
+          jump_back = '<C-_>',
+          jump_forward = '<C-i>',
         }
       })
     end
@@ -197,6 +216,9 @@ lvim.builtin.which_key.mappings["e"] = {
   f = { ":Neotree float git_status<CR>", "git status float explore" },
   s = { ":Neotree toggle document_symbols<CR>", "symbols explore" },
   b = { ":Neotree toggle buffers<CR>", "buffers explore" },
+}
+lvim.builtin.which_key.mappings["gG"] = {
+  ":Neotree float git_status<CR>"
 }
 lvim.builtin.which_key.mappings["ss"] = {
   "<cmd>lua require('spectre').toggle()<CR>", "global search"
@@ -222,3 +244,15 @@ lvim.builtin.which_key.mappings["j"] = {
   j = { "<cmd>lua require('Jumppack').start({ offset = -1 })<CR>", "Jump back" },
   i = { "<cmd>lua require('Jumppack').start({ offset = 1 })<CR>", "Jump forward" },
 }
+-- lvim.builtin.which_key.on_config_done = function()
+--   require('which_key').add({
+--     {
+--       mode = { "n", "v" },
+--       { "<C-x>",      group = "Customize" },
+--       { "<C-x><C-f>", ":Snap find_files<CR>", desc = "Find file" },
+--     },
+--   })
+-- end
+-- which_key
+lvim.keys.normal_mode["<C-x><C-f>"] = ":Snap find_files<CR>"
+lvim.keys.normal_mode["<leader>yy"] = ":let @+ = expand('%:p') .. ':' .. line('.')<CR>"
